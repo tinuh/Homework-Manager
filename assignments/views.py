@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from profiles.models import Profile
 from .models import Model_assignment
 
-
 # Create your views here.
 @login_required
 def view(request):
