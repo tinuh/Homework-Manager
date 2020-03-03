@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignments/migrations/0005_auto_20191026_1234.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignments/migrations/0006_auto_20200227_2022.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignments/migrations/0007_auto_20200227_2024.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignments/migrations/0008_auto_20200227_2035.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignments/migrations/0009_auto_20200227_2127.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/migrations/0004_remove_class_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/migrations/0005_auto_20191026_1508.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/migrations/0006_class_linker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/denied.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/join_class.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/site_map.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/teacherAssignment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/teacherAssignment_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/teacherClass.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/teacherHome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/typeOfUser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/site_map.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/student.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/teacher.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework_manager/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/assignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentAssignment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/assignment_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentAssignment_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/change_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/class.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentClass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentHome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/newUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/newUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/views.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1QwjXfXs7VMLzbWcX8f2TuT6nBR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/templates" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates\registration" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates" />
+      <recent name="C:\Users\tinu4\homework\pages\templates" />
+      <recent name="C:\Users\tinu4\homework\classes\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates\registration" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\static\add" />
+      <recent name="C:\Users\tinu4\homework\static\Add" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="" />
+      <created>1567726404010</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1567726404010</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

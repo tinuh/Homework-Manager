@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Create a Class</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--===============================================================================================-->
+	<link rel="icon" href="/static/add/images/icons/favicon.ico" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="/static/add/vendor/bootstrap/css/bootstrap.min.css" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="/static/add/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="/static/add/vendor/animate/animate.css" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="/static/add/vendor/css-hamburgers/hamburgers.min.css" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="/static/add/vendor/animsition/css/animsition.min.css" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="/static/add/vendor/select2/select2.min.css" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="/static/add/vendor/daterangepicker/daterangepicker.css" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="/static/add/css/util.css" />
+	<link rel="stylesheet" href="/static/add/css/main.css" />
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+
+		<div class="wrap-contact100">
+			<form method="POST" class="contact100-form validate-form">
+				{% csrf_token %}
+				<span class="contact100-form-title">
+					Create a Class
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Please enter a valid class name">
+					<input class="input100" id="name" type="text" name="name" placeholder="Class Name" data-bv-field="name">
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Please enter a valid descripion">
+					<textarea class="input100" id = 'description' type="text" name="description" placeholder="Description" data-bv-field="description"></textarea>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" type = "submit" value="Submit" id="submit-btn" name="btnSubmit">
+							Create
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="/static/add/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/add/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/add/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/add/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/add/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/add/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/static/add/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/add/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/add/js/main.js"></script>
+
+
+</body>
+</html>
