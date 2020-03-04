@@ -103,6 +103,7 @@ def teacherSpecificClass(request, *args, id):
 
         context = {
             'assignments': assignmentss,
+            'class': classe,
         }
 
         return render(request, 'teacherClassViewSpecific.html', context)
