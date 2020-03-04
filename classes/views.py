@@ -84,14 +84,25 @@ def teacherSpecificClass(request, *args, id):
         model_assignment = Model_assignment.objects.all()
         assignmentss = []
         assignments = Assignment.objects.all()
+        profiles = Profile.objects.all()
+        students = []
+
+
+        for links in class_link:
+                if links.enrolled_class.id == classe.id:
+                    print(links.linked_user.first_name)
+                    students.append(links.linked_user)
+
 
         count = -1
+        assignmentsC = 0
         for M_assignment in model_assignment:
             if M_assignment.linked_class.id == classe.id:
                 count += 1
                 assignmentss.append([M_assignment, [0, 0]])
                 for assignment in assignments:
                     if assignment.linked_model_assignment.id == M_assignment.id:
+                        assignmentsC += 1
                         if assignment.done == True:
                             assignmentss[count][1][0] += 1
                         else:
@@ -103,7 +114,9 @@ def teacherSpecificClass(request, *args, id):
 
         context = {
             'assignments': assignmentss,
+            'assignmentsC': assignmentsC,
             'class': classe,
+            'students': students,
         }
 
         return render(request, 'teacherClassViewSpecific.html', context)
