@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="Add Files">
-      <change beforePath="$PROJECT_DIR$/classes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/views.py" afterDir="false" />
+    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="138" column="69" selection-start-line="138" selection-start-column="65" selection-end-line="138" selection-end-column="69" />
+            <state relative-caret-position="1111">
+              <caret line="144" column="31" lean-forward="true" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -25,8 +25,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+            <state relative-caret-position="222">
+              <caret line="240" column="85" lean-forward="true" selection-start-line="240" selection-start-column="85" selection-end-line="240" selection-end-column="85" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -42,6 +53,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" />
         <option value="$PROJECT_DIR$/classes/views.py" />
       </list>
     </option>
@@ -67,6 +79,11 @@
             <path>
               <item name="homework_manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="Homework-Manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="homework_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Homework-Manager" type="462c0819:PsiDirectoryNode" />
+              <item name="assignments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="homework_manager" type="b2602c69:ProjectViewProjectNode" />
@@ -143,19 +160,32 @@
       <option name="project" value="LOCAL" />
       <updated>1583198684433</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changes to TeacherClassViewSpecific">
+      <created>1583296221902</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583296221902</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Student functionality to view a specific class.">
+      <created>1583336645073</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583336645073</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32956153" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32956153" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -205,20 +235,31 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Files" />
+    <MESSAGE value="Changes to TeacherClassViewSpecific" />
+    <MESSAGE value="Added Student functionality to view a specific class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Student functionality to view a specific class." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="138" column="69" selection-start-line="138" selection-start-column="65" selection-end-line="138" selection-end-column="69" />
+        <state relative-caret-position="1111">
+          <caret line="144" column="31" lean-forward="true" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+        <state relative-caret-position="222">
+          <caret line="240" column="85" lean-forward="true" selection-start-line="240" selection-start-column="85" selection-end-line="240" selection-end-column="85" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
