@@ -170,8 +170,7 @@ def change_password(request):
         if user.check_password(request.POST.get('c_pass')):
             return render(request, "change_password_2.html")
 
-
-    return render(request ,"change_password.html", context)
+    return render(request, "change_password.html", context)
 
 @login_required()
 def change_password_2(request, pass_1, pass_2):
@@ -190,6 +189,7 @@ def change_password_2(request, pass_1, pass_2):
         return response
 
     return render(request, "change_password_2.html", {})
+
 
 def denied(request, *args, **kwargs):
 
