@@ -125,7 +125,7 @@ def studentHome(request, *args, **kwargs):
 
     print(args, kwargs)
     print(request.user)
-    return render(request, 'studenthome.html', context)
+    return render(request, 'studentHome.html', context)
 
 @login_required
 def teacherHome(request, *args, **kwargs):
