@@ -3,7 +3,7 @@ from .models import Class
 from .models import class_linker
 from assignments.models import Assignment
 from assignments.models import Model_assignment
-from django.shortcuts import render_to_response,redirect
+from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from profiles.models import Profile
 import random

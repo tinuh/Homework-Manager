@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
-from django.shortcuts import render_to_response,redirect
+from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from classes.models import Class

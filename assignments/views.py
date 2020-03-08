@@ -2,7 +2,7 @@ from django.shortcuts import render
 from classes.models import Class
 from classes.models import class_linker
 from .models import Assignment
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from profiles.models import Profile
 from .models import Model_assignment
