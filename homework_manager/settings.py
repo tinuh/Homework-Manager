@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +25,7 @@ SECRET_KEY = '6$quaimi!xgfz#swhx5!&3q0v6r#x2hhk@uy5q(5f+*83)vqg0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['the-homework-manager.herokuapp.com', '0.0.0.0', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -134,6 +133,3 @@ STATICFILES_DIRS = [
 
 SESSION_EXPIRE_SECONDS = 3600  # 600 seconds = 5 minutes
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
-
-#Activate Django Heroku
-django_heroku.settings(locals())
