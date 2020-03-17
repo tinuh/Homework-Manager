@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework_manager/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583641155976</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Allow all hosts">
+      <created>1584468102499</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584468102499</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +140,7 @@
     <MESSAGE value="Changes to TeacherClassViewSpecific" />
     <MESSAGE value="Added Student functionality to view a specific class." />
     <MESSAGE value="Minor Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes" />
+    <MESSAGE value="Allow all hosts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow all hosts" />
   </component>
 </project>
