@@ -65,7 +65,7 @@
                       Classes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="/class/add">Add Class</a>
+                      <a class="dropdown-item" href="/class/student/join">Join a Class</a>
                       <a class="dropdown-item" href="/class/view">View Classes</a>
                     </div>
                   </li>
@@ -142,7 +142,7 @@
                   <div class="card-body">
                     <a>{{class.name}}</a>&nbsp;
                     <a href = "/class/student/view/{{class.id}}" title = "View" class = "btn btn-primary">👁</a>
-                    <a href = "/home" title = "Un-Enroll" class = "btn btn-danger">✗</a>
+                    <a href = "/class/remove/student/{{class.id}}/{{request.user.id}}" title = "Un-Enroll" class = "btn btn-danger">✗</a>
                   </div>
                 </div>
                 {% endfor %}

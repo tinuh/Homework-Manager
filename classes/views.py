@@ -241,10 +241,13 @@ def remove_student(request,*args, class_id, user_id):
         class_link = class_linker.objects.get(enrolled_class=classe,linked_user=user)
     except:
         exist = False
-    if profile.teacher and exist:
+    if (profile.teacher or request.user.id == user_id) and exist:
         class_link.delete()
 
-        response = redirect('/class/teacher/view/' + str(class_id))
+        if profile.teacher:
+            response = redirect('/class/teacher/view/' + str(class_id))
+        else:
+            response = redirect('/class/student/view')
         return response
     else:
         response = redirect('/denied')
