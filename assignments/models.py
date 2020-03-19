@@ -1,5 +1,6 @@
 from django.db import models
 from classes.models import Class
+from classes.models import class_linker
 from django.contrib.auth.models import User
 
 class Model_assignment(models.Model):
@@ -16,6 +17,7 @@ class Assignment(models.Model):
     user = models.ForeignKey(User ,on_delete=models.CASCADE, blank = True, null = True)
     done = models.BooleanField(default = False)
     linked_model_assignment = models.ForeignKey(Model_assignment, on_delete=models.CASCADE, blank = True, null = True)
+    linked_class_linker = models.ForeignKey(class_linker, on_delete=models.CASCADE, blank = True, null = True)
 
     def __unicode__(self):
         return self.name

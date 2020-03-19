@@ -137,7 +137,7 @@ def assignmentTeacher_add(request, *args, **kwargs):
 
         for student in class_link:
             if str(student.enrolled_class.id) == str(request.POST.get('class')):
-                assignments = Assignment(name = request.POST.get('name'), description = request.POST.get('description'), linked_class_id = request.POST.get('class'), user_id = student.linked_user.id, linked_model_assignment_id = int(model_assiginment.id))
+                assignments = Assignment(name = request.POST.get('name'), description = request.POST.get('description'), linked_class_id = request.POST.get('class'), user_id = student.linked_user.id, linked_model_assignment_id = int(model_assiginment.id), linked_class_linker_id = int(student.id))
                 assignments.save()
 
         class_object = Class.objects.get(id = int(str(request.POST.get('class')))).id
