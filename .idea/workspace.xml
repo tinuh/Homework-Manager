@@ -4,7 +4,6 @@
     <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentAssignment_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentAssignment_add.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584644468582</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Grammar Error Fix.">
+      <created>1584644670076</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1584644670076</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +172,7 @@
     <MESSAGE value="Minor Changes" />
     <MESSAGE value="Fixed some links" />
     <MESSAGE value="Student can un-enroll from a class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Student can un-enroll from a class." />
+    <MESSAGE value="Grammar Error Fix." />
+    <option name="LAST_COMMIT_MESSAGE" value="Grammar Error Fix." />
   </component>
 </project>
