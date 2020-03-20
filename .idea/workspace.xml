@@ -137,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584647435221</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Preparing to Deploy to AWS">
+      <created>1584671435619</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1584671435619</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +184,7 @@
     <MESSAGE value="Student can un-enroll from a class." />
     <MESSAGE value="Grammar Error Fix." />
     <MESSAGE value="Minor Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes" />
+    <MESSAGE value="Preparing to Deploy to AWS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preparing to Deploy to AWS" />
   </component>
 </project>
