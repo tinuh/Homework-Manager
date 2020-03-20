@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584644670076</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Minor Changes">
+      <created>1584647435221</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1584647435221</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,10 +173,10 @@
     <MESSAGE value="Changes to TeacherClassViewSpecific" />
     <MESSAGE value="Added Student functionality to view a specific class." />
     <MESSAGE value="Allow all hosts" />
-    <MESSAGE value="Minor Changes" />
     <MESSAGE value="Fixed some links" />
     <MESSAGE value="Student can un-enroll from a class." />
     <MESSAGE value="Grammar Error Fix." />
-    <option name="LAST_COMMIT_MESSAGE" value="Grammar Error Fix." />
+    <MESSAGE value="Minor Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes" />
   </component>
 </project>
