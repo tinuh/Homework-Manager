@@ -11,7 +11,7 @@ class Model_assignment(models.Model):
 
 # Create your models here.
 class Assignment(models.Model):
-    name   = models.CharField(max_length = 120)
+    name = models.CharField(max_length = 120)
     description = models.TextField()
     linked_class = models.ForeignKey(Class, on_delete=models.CASCADE, blank = True, null = True)
     user = models.ForeignKey(User ,on_delete=models.CASCADE, blank = True, null = True)

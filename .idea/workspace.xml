@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
+    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="All views are now rendered with a base.html file for effieciency. Additionally, there is now a prompt before">
+      <change afterPath="$PROJECT_DIR$/pages/templates/studentBase.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/templates/teacherBase.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework_manager/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/studentAssignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentAssignment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/studentClass.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentClass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/studentHome.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentHome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/teacherAssignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherAssignment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/teacherClass.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherClass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/teacherHome.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherHome.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,19 +37,19 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.project" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates\registration" />
-      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates" />
-      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates" />
-      <recent name="C:\Users\tinu4\homework\pages\templates" />
-      <recent name="C:\Users\tinu4\homework\classes\templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates" />
       <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates" />
       <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates\registration" />
       <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\static\add" />
       <recent name="C:\Users\tinu4\homework\static\Add" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates\registration" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates" />
+      <recent name="C:\Users\tinu4\homework\pages\templates" />
+      <recent name="C:\Users\tinu4\homework\classes\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -155,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584719520286</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="delete AWS">
+      <created>1585002841218</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1585002841219</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,6 +214,7 @@
     <MESSAGE value="Grammar Error Fix." />
     <MESSAGE value="Minor Changes" />
     <MESSAGE value="Preparing to Deploy to AWS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Preparing to Deploy to AWS" />
+    <MESSAGE value="delete AWS" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete AWS" />
   </component>
 </project>

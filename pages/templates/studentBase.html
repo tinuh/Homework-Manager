@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="/static/landing_page/css/slick.css" />
     <!-- style CSS -->
     <link rel="stylesheet" href="/static/landing_page/css/style.css" />
+
   </head>
 
-  <body>
     <!--::header part start::-->
     <header class="main_menu home_menu">
       <div class="container">
@@ -52,17 +52,57 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/home">Home</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Classes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/class/student/join">Join a Class</a>
+                      <a class="dropdown-item" href="/class/student/view">View Classes</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Homework Assignments
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/homework/add">Add Homework</a>
+                      <a class="dropdown-item" href="/homework/view">View Homework</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+                    <a
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class='fas'>&#xf007;</i> {{request.user.first_name}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/profile/edit">Edit Profile</a>
+                      <a class="dropdown-item" href="/profile/password/change">Change Password</a>
+                    </div>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/site/map">Site Map</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/new">Sign Up</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/login">Log In</a>
+                    <a class="nav-link" href="/logout">Log Out</a>
                   </li>
                 </ul>
               </div>
@@ -73,49 +113,26 @@
     </header>
     <!-- Header part end-->
 
-    <!-- banner part start-->
-    <section class="banner_part landing">
-      <div class="container">
-        <div class="row ">
-          <div class="col-lg-6 offset-lg-1">
-            <div class="banner_text">
-              <div class="banner_text_iner"><br><br><br><br><br><br><br><br><br><br>
-                <h1>About</h1>
-                <h5 style = "color:white;">This is the Homework Manager. A new type of tool for classrooms. It helps classrooms keep track of all types of things including homework and announcements.
-                The Homework Manager features a Teacher Portal and a Student Portal. The Teacher Portal allows teachers to create and setup classes for their students. It also allows teachers to assign assignments
-                 and view their status. In the student Portal students can view their assignments and can even create their own non-school related assignments. In addition, Students will be able to update the status
-                their assignments.</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- banner part start-->
+    <style>
+      .class-card{
+      transition: 0.3s;
+      margin-bottom: 15px;
+      width: 1080px;
+      }
 
+      .class-card:hover{
+        transform: scale(1.2, 1.2);
+        box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+      }
 
-    <!-- footer part start-->
-    <footer class = "footer-landing">
-      <div class="container">
-      </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="copyright_part_text text-center">
-              <div class="row">
-                <div class="col-lg-12">
-                  <p class="footer-text m-0">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website was created by Tinu Vanapamula
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                  </p>
-                </div>
-			  </div>
-            </div>
-          </div>
-        </div>
+    </style>
 
-    </footer>
-    <!-- footer part end-->
+<body>
+    {% block main-content %}
+        Body Content
+    {% endblock %}
+</body>
 
     <!-- jquery plugins here-->
     <script src="/static/landing_page/js/jquery-1.12.1.min.js"></script>
@@ -131,5 +148,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="/static/landing_page/js/jquery.nice-select.min.js"></script>
     <!-- custom js -->
     <script src="/static/landing_page/js/custom.js"></script>
-  </body>
+
 </html>
