@@ -25,7 +25,7 @@ SECRET_KEY = '6$quaimi!xgfz#swhx5!&3q0v6r#x2hhk@uy5q(5f+*83)vqg0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['homework.tinu.tech', "*", 'http://homework-manager-dev.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['homework.tinu.tech', "*"]
 
 
 # Application definition

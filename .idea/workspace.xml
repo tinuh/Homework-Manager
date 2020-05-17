@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/homework_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/homework_manager.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework_manager/settings.py" afterDir="false" />
     </list>
@@ -26,8 +27,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -56,7 +57,8 @@
       <option name="presentableId" value="Default" />
       <updated>1567726404010</updated>
       <workItem from="1585176796369" duration="642000" />
-      <workItem from="1585284186489" duration="43000" />
+      <workItem from="1585284186489" duration="1285000" />
+      <workItem from="1585327645933" duration="934000" />
     </task>
     <task id="LOCAL-00001" summary="Add Files">
       <created>1583198684433</created>
@@ -210,5 +212,23 @@
     <MESSAGE value="delete AWS" />
     <MESSAGE value="All views are now rendered with a base.html file for effieciency. Additionally, there is now a prompt before deleting anything." />
     <option name="LAST_COMMIT_MESSAGE" value="All views are now rendered with a base.html file for effieciency. Additionally, there is now a prompt before deleting anything." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="694" y="281" key="EnvironmentVariablesDialog" timestamp="1585327863132">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="694" y="281" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585327863132" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585327858038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585327858038" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1585327874228">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585327874228" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585327651020">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585327651020" />
   </component>
 </project>
