@@ -9,7 +9,8 @@
           <div class="col-lg-12">
             <div class="banner_text"><br><br><br><br><br>
                 <center><h1>{{class.name}}</h1>
-                <h3 style = 'color: white;'>(Class Code: {{class.code}}) <a class = "edit-title" href = "/class/edit/{{ class.id }}">✎</a></h3><br><br><br>
+                <h3 style = 'color: white;'>(Class Code: {{class.code}}) <a class = "edit-title" href = "/class/edit/{{ class.id }}">✎</a></h3>
+                <p style = 'color: white;'>{{ class.description }}</p><br><br><br>
                 <h1>Students <span class="badge badge-secondary">{{studentsA}}</span></h1></center>
 
                 {% for student in students %}
