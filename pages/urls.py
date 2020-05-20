@@ -9,7 +9,7 @@ urlpatterns = [
     path('denied', views.denied),
     path('student/home', views.studentHome),
     path('teacher/home', views.teacherHome),
-    path('logout', views.logout_request),
+    path('logout/', views.logout_request),
     path('profile/edit', views.editProfile),
     path('profile/password/change', views.change_password),
     path('profile/password/change/<pass_1>/<pass_2>', views.change_password_2),

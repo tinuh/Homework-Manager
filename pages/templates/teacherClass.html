@@ -14,7 +14,7 @@
                   <div class="card-body">
                     <a>{{class.name}}</a>&nbsp;
                     <a href = "/class/teacher/view/{{class.id}}" title = "View" class = "btn btn-primary">👁</a>
-                    <a href = "/home" title = "Edit" class = "btn btn-secondary">✎</a>
+                    <a href = "/class/edit/{{ class.id }}" title = "Edit" class = "btn btn-secondary">✎</a>
                     <a href = "/class/delete/{{class.id}}" title = "Delete" onclick="return window.confirm('Are you sure you want to delete the class: {{class.name}}')" class = "btn btn-danger">✗</a>
                   </div>
                 </div>

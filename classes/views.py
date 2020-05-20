@@ -83,7 +83,7 @@ def teacherSpecificClass(request, *args, id):
         class_link = class_linker.objects.all()
         model_assignment = Model_assignment.objects.all()
         assignmentss = []
-        assignments = Assignment.objects.all()
+        assignments = Assignment.objects.filter()
         profiles = Profile.objects.all()
         students = []
 
@@ -100,13 +100,13 @@ def teacherSpecificClass(request, *args, id):
             if M_assignment.linked_class.id == classe.id:
                 count += 1
                 assignmentss.append([M_assignment, [0, 0]])
+                assignments = Assignment.objects.filter(linked_model_assignment_id = M_assignment.id)
                 for assignment in assignments:
-                    if assignment.linked_model_assignment.id == M_assignment.id:
-                        assignmentsC += 1
-                        if assignment.done == True:
-                            assignmentss[count][1][0] += 1
-                        else:
-                            assignmentss[count][1][1] += 1
+                    assignmentsC += 1
+                    if assignment.done == True:
+                        assignmentss[count][1][0] += 1
+                    else:
+                        assignmentss[count][1][1] += 1
 
 
 
@@ -198,6 +198,43 @@ def class_add(request, *args, **kwargs):
     print(args, kwargs)
     print(request.user)
     return render(request, 'class_add.html', context)
+
+@login_required
+def class_edit(request, *args, **kwargs):
+    id = kwargs['id']
+
+    profile = Profile.objects.get(user = request.user)
+    go = False
+    try:
+        classe = Class.objects.get(pk = id)
+        if classe.teacher.id == request.user.id:
+            go = True
+    except:
+        go = False
+    if profile.teacher and go:
+
+        context = {
+            'class': classe,
+        }
+
+        if request.method == "POST":
+            classe = Class.objects.get(pk = id)
+            classe.name = request.POST.get('name')
+            classe.description = request.POST.get('description')
+            classe.teacher_id = request.user.id
+            classe.save()
+
+            classe = Class.objects.get(pk = id)
+
+            response = '/class/teacher/view/' + str(classe.id)
+            response = redirect(response)
+            return response
+    else:
+        response = redirect('/denied')
+        return response
+    print(args, kwargs)
+    print(request.user)
+    return render(request, 'class_edit.html', context)
 
 @login_required
 def delete(request, *args, id):
