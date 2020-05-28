@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentAssignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentAssignment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentBase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentHome.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentHome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/teacherBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherBase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/teacherHome.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherHome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +59,7 @@
       <workItem from="1585176796369" duration="642000" />
       <workItem from="1585284186489" duration="1285000" />
       <workItem from="1585327645933" duration="934000" />
-      <workItem from="1590001138590" duration="1276000" />
+      <workItem from="1590001138590" duration="1416000" />
     </task>
     <task id="LOCAL-00001" summary="Add Files">
       <created>1583198684433</created>
@@ -184,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590001176335</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Minor Changes.">
+      <created>1590002460076</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1590002460076</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,13 +226,14 @@
     <MESSAGE value="delete AWS" />
     <MESSAGE value="All views are now rendered with a base.html file for effieciency. Additionally, there is now a prompt before deleting anything." />
     <MESSAGE value="Added Class Edit feature." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Class Edit feature." />
+    <MESSAGE value="Minor Changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1280" y="111" key="CommitChangelistDialog2" timestamp="1590001175801">
+    <state x="-1280" y="111" key="CommitChangelistDialog2" timestamp="1590002459604">
       <screen x="-1280" y="51" width="1280" height="984" />
     </state>
-    <state x="-1280" y="111" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590001175801" />
+    <state x="-1280" y="111" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590002459604" />
     <state x="694" y="281" key="EnvironmentVariablesDialog" timestamp="1585327863132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
