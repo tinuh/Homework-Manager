@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework_manager/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +67,7 @@
       <workItem from="1590001138590" duration="1416000" />
       <workItem from="1590702957546" duration="873000" />
       <workItem from="1590810661336" duration="4633000" />
-      <workItem from="1590856662320" duration="5544000" />
+      <workItem from="1590856662320" duration="6090000" />
     </task>
     <task id="LOCAL-00001" summary="Add Files">
       <created>1583198684433</created>
@@ -206,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590815234075</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Migrate from sqlite over to postgresql for faster db.">
+      <created>1590862976009</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1590862976009</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,13 +258,14 @@
     <MESSAGE value="Minor Changes." />
     <MESSAGE value="git attributes" />
     <MESSAGE value="Major changes, feature added, and application stable." />
-    <option name="LAST_COMMIT_MESSAGE" value="Major changes, feature added, and application stable." />
+    <MESSAGE value="Migrate from sqlite over to postgresql for faster db." />
+    <option name="LAST_COMMIT_MESSAGE" value="Migrate from sqlite over to postgresql for faster db." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1280" y="111" key="CommitChangelistDialog2" timestamp="1590815233575">
+    <state x="-1280" y="111" key="CommitChangelistDialog2" timestamp="1590862975557">
       <screen x="-1280" y="51" width="1280" height="984" />
     </state>
-    <state x="-1280" y="111" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590815233575" />
+    <state x="-1280" y="111" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590862975557" />
     <state x="694" y="281" key="EnvironmentVariablesDialog" timestamp="1585327863132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -274,6 +278,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585327874228" />
+    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2" timestamp="1590862984376">
+      <screen x="-1280" y="51" width="1280" height="984" />
+    </state>
+    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590862984376" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585327651020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
