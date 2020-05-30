@@ -10,7 +10,7 @@ class Model_assignment(models.Model):
     linked_teacher = models.ForeignKey(User ,on_delete=models.CASCADE, blank = True, null = True)
 
     def __str__(self):
-        return self.name
+        return (self.name + " (" +  self.linked_class.name + ")")
 
 # Create your models here.
 class Assignment(models.Model):

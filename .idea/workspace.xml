@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentAssignmentViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentAssignmentViewSpecific.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +70,8 @@
       <workItem from="1590810661336" duration="4633000" />
       <workItem from="1590856662320" duration="6222000" />
       <workItem from="1590869684383" duration="1949000" />
-      <workItem from="1590871839470" duration="150000" />
+      <workItem from="1590871839470" duration="234000" />
+      <workItem from="1590877476843" duration="294000" />
     </task>
     <task id="LOCAL-00001" summary="Add Files">
       <created>1583198684433</created>
@@ -226,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590871530065</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Minor Changes">
+      <created>1590872064757</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1590872064757</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +275,6 @@
     <MESSAGE value="Fixed some links" />
     <MESSAGE value="Student can un-enroll from a class." />
     <MESSAGE value="Grammar Error Fix." />
-    <MESSAGE value="Minor Changes" />
     <MESSAGE value="Preparing to Deploy to AWS" />
     <MESSAGE value="delete AWS" />
     <MESSAGE value="All views are now rendered with a base.html file for effieciency. Additionally, there is now a prompt before deleting anything." />
@@ -278,13 +285,14 @@
     <MESSAGE value="Migrate from sqlite over to postgresql for faster db." />
     <MESSAGE value="Update git ignore" />
     <MESSAGE value="Make some changes with assingnment view page and joining class process." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make some changes with assingnment view page and joining class process." />
+    <MESSAGE value="Minor Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1280" y="111" key="CommitChangelistDialog2" timestamp="1590871529625">
+    <state x="-1280" y="111" key="CommitChangelistDialog2" timestamp="1590872064326">
       <screen x="-1280" y="51" width="1280" height="984" />
     </state>
-    <state x="-1280" y="111" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590871529625" />
+    <state x="-1280" y="111" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590872064326" />
     <state x="694" y="281" key="EnvironmentVariablesDialog" timestamp="1585327863132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -297,10 +305,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585327874228" />
-    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2" timestamp="1590871552970">
+    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2" timestamp="1590872066365">
       <screen x="-1280" y="51" width="1280" height="984" />
     </state>
-    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590871552970" />
+    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590872066365" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585327651020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
