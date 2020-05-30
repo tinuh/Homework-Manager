@@ -94,10 +94,10 @@ def teacherSpecificClass(request, *args, id):
         for M_assignment in model_assignment:
             if M_assignment.linked_class.id == classe.id:
                 count += 1
+                assignmentsC += 1
                 assignmentss.append([M_assignment, [0, 0]])
                 assignments = Assignment.objects.filter(linked_model_assignment_id = M_assignment.id)
                 for assignment in assignments:
-                    assignmentsC += 1
                     if assignment.done == True:
                         assignmentss[count][1][0] += 1
                     else:
@@ -108,6 +108,7 @@ def teacherSpecificClass(request, *args, id):
             'assignmentsC': assignmentsC,
             'class': classe,
             'students': students,
+            'studentsA': len(students),
         }
 
         return render(request, 'teacherClassViewSpecific.html', context)
@@ -251,6 +252,18 @@ def join_class(request, *args, **kwargs):
         class_link.linked_user_id = request.user.id
         class_link.enrolled_class_id = classe.id
         class_link.save()
+
+        model_assiginments = Model_assignment.objects.filter(linked_class_id = classe.id)
+
+        for assignment in model_assiginments:
+            new_assign = Assignment()
+            new_assign.linked_class_id = classe.id
+            new_assign.name = assignment.name
+            new_assign.description = assignment.description
+            new_assign.linked_class_linker_id = class_link.id
+            new_assign.linked_model_assignment_id = assignment.id
+            new_assign.user_id = request.user.id
+            new_assign.save()
 
         response = redirect('/class/student/view/' + str(classe.id))
         return response

@@ -10,7 +10,11 @@
             <div class="banner_text"><br><br><br><br><br>
                 <center><h1>{{assignment.name}}</h1>
                 <p style = 'color: white;'>{{ assignment.description }}</p><br><br><br>
-
+                {% if not assignment.done %}
+                    <a class = "btn btn-success" href = "/homework/done/{{ assignment.id }}">Mark Assignment as Done</a>
+                {% else %}
+                    <a class = "btn btn-danger" href = "/homework/undone/{{ assignment.id }}">Mark Assignment as not Done</a>
+                {% endif %}
             </div>
           </div>
         </div>
