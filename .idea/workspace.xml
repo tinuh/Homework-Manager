@@ -2,29 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/templates/studentAssignmentViewSpecific.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/templates/teacherAssignmentViewSpecific.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profiles/migrations/0002_auto_20200529_2357.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework_manager/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework_manager/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentAssignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentAssignment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/teacherAssignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherAssignment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiles/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework_manager/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -80,7 +70,8 @@
       <workItem from="1585327645933" duration="934000" />
       <workItem from="1590001138590" duration="1416000" />
       <workItem from="1590702957546" duration="873000" />
-      <workItem from="1590810661336" duration="4515000" />
+      <workItem from="1590810661336" duration="4633000" />
+      <workItem from="1590856662320" duration="5544000" />
     </task>
     <task id="LOCAL-00001" summary="Add Files">
       <created>1583198684433</created>
@@ -208,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590703033983</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Major changes, feature added, and application stable.">
+      <created>1590815234075</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1590815234075</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,13 +254,14 @@
     <MESSAGE value="Added Class Edit feature." />
     <MESSAGE value="Minor Changes." />
     <MESSAGE value="git attributes" />
-    <option name="LAST_COMMIT_MESSAGE" value="git attributes" />
+    <MESSAGE value="Major changes, feature added, and application stable." />
+    <option name="LAST_COMMIT_MESSAGE" value="Major changes, feature added, and application stable." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1280" y="111" key="CommitChangelistDialog2" timestamp="1590703033556">
+    <state x="-1280" y="111" key="CommitChangelistDialog2" timestamp="1590815233575">
       <screen x="-1280" y="51" width="1280" height="984" />
     </state>
-    <state x="-1280" y="111" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590703033556" />
+    <state x="-1280" y="111" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590815233575" />
     <state x="694" y="281" key="EnvironmentVariablesDialog" timestamp="1585327863132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -283,5 +282,9 @@
       <screen x="-1280" y="51" width="1280" height="984" />
     </state>
     <state x="-831" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1589998219291" />
+    <state x="-977" y="262" width="672" height="678" key="search.everywhere.popup" timestamp="1590860875887">
+      <screen x="-1280" y="51" width="1280" height="984" />
+    </state>
+    <state x="-977" y="262" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590860875887" />
   </component>
 </project>
