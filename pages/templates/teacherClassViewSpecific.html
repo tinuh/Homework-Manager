@@ -23,11 +23,12 @@
                 {% endfor %}
               {% if assignmentsC != 0 %}
               <center><h1>Assignments <span class="badge badge-secondary">{{assignmentsC}}</span></h1></center>
-              {% for assignment in assignments%}
+              {% for assignment in assignments %}
               <div class="card class-card">
                 <div class="card-body">
                   <center><h3>{{assignment.0.name}} ( <span class="badge badge-secondary" style = 'color: #00d089;'>{{assignment.1.0}}</span> Done, <span class="badge badge-secondary" style = 'color: #00d089;'>{{assignment.1.1}}</span> Assigned)
-                    <a href = "/M_assignment/delete/{{assignment.0.id}}" title = "Delete" onclick=" return window.confirm('Are you sure you want to delete the assignment: {{assignment.0.name}}');" class = "btn btn-danger">✗</a></h3></center>
+                    <a href = "/homework/teacher/view/{{ assignment.0.id }}" title = "View" class = "btn btn-primary">👁</a>
+                    <a href = "/homework/model/delete/{{assignment.0.id}}/1" title = "Delete" onclick=" return window.confirm('Are you sure you want to delete the assignment: {{assignment.0.name}}');" class = "btn btn-danger">✗</a></h3></center>
                 </div>
               </div>
               {% endfor %}

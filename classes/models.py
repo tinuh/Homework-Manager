@@ -10,7 +10,12 @@ class Class(models.Model):
 
     def __unicode__(self):
         return self.name
+    def __str__(self):
+        return self.name
 
 class class_linker(models.Model):
     enrolled_class = models.ForeignKey(Class, on_delete=models.CASCADE)
     linked_user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return (self.enrolled_class.name + " (" + self.linked_user.first_name + ")")

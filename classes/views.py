@@ -10,14 +10,13 @@ import random
 from django.contrib.auth.models import User
 
 # Create your views here.
+
+@login_required
 def view(request):
-    profile = Profile.objects.get(user_id = request.user.id)
-    if profile.teacher == False:
-        response = '/class/student/view'
-    elif profile.teacher == True:
+    if request.user.profile.teacher:
         response = '/class/teacher/view'
     else:
-        response = '/denied'
+        response = '/class/student/view'
     return redirect(response)
 
 @login_required
@@ -31,9 +30,6 @@ def studentClass(request, *args, **kwargs):
             classe = Class.objects.get(pk = link.enrolled_class.id)
             classes.append(classe)
 
-
-
-
     context = {
         'classes': classes,
         'assignments': assignments,
@@ -44,11 +40,10 @@ def studentClass(request, *args, **kwargs):
     print(args, kwargs)
     print(request.user)
     return render(request, 'studentClass.html', context)
+
 @login_required
 def teacherClass(request, *args, **kwargs):
-
-    profile = Profile.objects.get(user = request.user)
-    if profile.teacher:
+    if request.user.profile.teacher:
         assignments = Assignment.objects.all()
         class_link = class_linker.objects.all()
         classes = Class.objects.all()
@@ -73,13 +68,14 @@ def teacherClass(request, *args, **kwargs):
     else:
         response = redirect('/denied')
         return response
+
 @login_required
 def teacherSpecificClass(request, *args, id):
-
-    profile = Profile.objects.get(user=request.user)
-    classe = Class.objects.get(pk=id)
-    if profile.teacher and classe.teacher == request.user:
-
+    try:
+        classe = Class.objects.get(pk=id)
+    except:
+        return redirect("/denied")
+    if request.user.profile.teacher and classe.teacher == request.user:
         class_link = class_linker.objects.all()
         model_assignment = Model_assignment.objects.all()
         assignmentss = []
@@ -92,7 +88,6 @@ def teacherSpecificClass(request, *args, id):
                 if links.enrolled_class.id == classe.id:
                     print(links.linked_user.first_name)
                     students.append(links.linked_user)
-
 
         count = -1
         assignmentsC = 0
@@ -107,10 +102,6 @@ def teacherSpecificClass(request, *args, id):
                         assignmentss[count][1][0] += 1
                     else:
                         assignmentss[count][1][1] += 1
-
-
-
-
 
         context = {
             'assignments': assignmentss,
@@ -127,7 +118,6 @@ def teacherSpecificClass(request, *args, id):
 
 @login_required
 def studentSpecificClass(request, *args, id):
-
 
     try:
         classe = Class.objects.get(pk=id)
@@ -159,8 +149,7 @@ def studentSpecificClass(request, *args, id):
 @login_required
 def class_add(request, *args, **kwargs):
 
-    profile = Profile.objects.get(user = request.user)
-    if profile.teacher:
+    if request.user.profile.teacher:
 
         classes = Class.objects.all()
         assignments = Assignment.objects.all()
@@ -203,7 +192,6 @@ def class_add(request, *args, **kwargs):
 def class_edit(request, *args, **kwargs):
     id = kwargs['id']
 
-    profile = Profile.objects.get(user = request.user)
     go = False
     try:
         classe = Class.objects.get(pk = id)
@@ -211,7 +199,7 @@ def class_edit(request, *args, **kwargs):
             go = True
     except:
         go = False
-    if profile.teacher and go:
+    if request.user.profile.teacher and go:
 
         context = {
             'class': classe,
@@ -238,9 +226,12 @@ def class_edit(request, *args, **kwargs):
 
 @login_required
 def delete(request, *args, id):
-    profile = Profile.objects.get(user = request.user)
-    if profile.teacher:
-        classes = Class.objects.get(pk = id)
+    try:
+        classes = Class.objects.get(pk=id)
+    except:
+        return redirect('/denied')
+
+    if request.user.profile.teacher and classes.teacher.id == request.id:
         classes.delete()
 
         response = redirect('/class/teacher/view')
@@ -251,10 +242,11 @@ def delete(request, *args, id):
 
 @login_required
 def join_class(request, *args, **kwargs):
-
     if request.method == "POST":
-
-        classe = Class.objects.get(code = str(request.POST.get('code')))
+        try:
+            classe = Class.objects.get(code = str(request.POST.get('code')))
+        except:
+            return redirect("/class/student/join")
         class_link = class_linker()
         class_link.linked_user_id = request.user.id
         class_link.enrolled_class_id = classe.id

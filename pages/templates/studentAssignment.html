@@ -10,30 +10,32 @@
                 <center><h1>Assigned <span class="badge badge-secondary">{{AssignmentsA}}</span></h1></center>
                   {% for assignment in assignments %}
                   {% if assignment.done == False %}
-                  {% if assignment.user == request.user %}
                   <div class="card class-card">
                     <div class="card-body">
                       <a>{{assignment.name}}</a>&nbsp;
-                      <!-- <a href = "/home" title = "View" class = "btn btn-primary">👁</a> -->
+                      <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a>
                       <a href = "/homework/done/{{assignment.id}}" title = "Mark as Done" class = "btn btn-success">✓</a>
+                      {% if not assignment.linked_model_assignment %}
+                      <a href = "/homework/delete/{{assignment.id}}" title = "Delete" class = "btn btn-danger">✗</a>
+                      {% endif %}
                     </div>
                   </div>
-                  {% endif %}
                   {% endif %}
                   {% endfor %}
 
                 <center><h1>Done <span class="badge badge-secondary">{{AssignmentsD}}</span></h1></center>
                   {% for assignment in assignments %}
                   {% if assignment.done == True %}
-                  {% if assignment.user == request.user %}
                   <div class="card class-card">
                     <div class="card-body">
                       <a>{{assignment.name}}</a>&nbsp;
-                      <a href = "/home" title = "View" class = "btn btn-primary">👁</a>
-                      <a href = "/homework/undone/{{assignment.id}}" title = "Mark as UnDone" class = "btn btn-danger">-✓</a>
+                      <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a>
+                      <a href = "/homework/undone/{{assignment.id}}" title = "Un-Submit" class = "btn btn-dark">-✓</a>
+                      {% if not assignment.linked_model_assignment %}
+                      <a href = "/homework/delete/{{assignment.id}}" title = "Delete" class = "btn btn-danger">✗</a>
+                      {% endif %}
                     </div>
                   </div>
-                  {% endif %}
                   {% endif %}
                   {% endfor %}
             </div>

@@ -65,7 +65,7 @@ def assignmentsTeacher(request, *args, **kwargs):
 @login_required
 def assignmentsStudent(request, *args, **kwargs):
     classes = Class.objects.all()
-    assignments = Assignment.objects.all()
+    assignments = Assignment.objects.filter(user_id=request.user.id)
     AssignmentsA = 0
     AssignmentsD = 0
 
@@ -175,3 +175,70 @@ def undone(request, *args, id):
 
     response = redirect("/homework/view")
     return response
+
+def delete(request, *args, **kwargs):
+    id = kwargs['id']
+    try:
+        assignment = Assignment.objects.get(pk=id)
+    except:
+        return redirect('/denied')
+    if assignment.user.id == request.user.id:
+        assignment.delete()
+
+        response = redirect('/homework/view')
+        return response
+    else:
+        response = redirect('/denied')
+        return response
+
+def model_delete(request, *args, **kwargs):
+    id = kwargs['id']
+    try:
+        assignment = Model_assignment.objects.get(pk=id)
+    except:
+        return redirect('/denied')
+    if assignment.linked_teacher.id == request.user.id:
+        if kwargs['class'] == "1":
+            classid = assignment.linked_class.id
+            assignment.delete()
+            response = redirect('/class/teacher/view/' + str(classid))
+        else:
+            assignment.delete()
+            response = redirect('/homework/view')
+
+        return response
+    else:
+        response = redirect('/denied')
+        return response
+
+def studentAssignmentSpecific(request, *args, **kwargs):
+    id = kwargs['id']
+
+    try:
+        assignment = Assignment.objects.get(pk = id)
+    except:
+        return redirect("/denied")
+
+    context = {
+        'assignment': assignment,
+    }
+
+    return render(request, "studentAssignmentViewSpecific.html", context)
+
+def teacherAssignmentSpecific(request, *args, **kwargs):
+    id = kwargs['id']
+
+    try:
+        assignment = Model_assignment.objects.get(pk = id)
+    except:
+        return redirect("/denied")
+
+    context = {
+        'assignment': assignment,
+    }
+
+    if request.user.profile.teacher and assignment.linked_teacher.id == request.user.id:
+        return render(request, "studentAssignmentViewSpecific.html", context)
+    else:
+        return redirect("/denied")
+

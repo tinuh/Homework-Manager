@@ -6,7 +6,7 @@ urlpatterns = [
     path('new/<str:type>', views.newUser),
     path('new', views.new),
     path('home', views.decidehome),
-    path('denied', views.denied),
+    path('denied/', views.denied),
     path('student/home', views.studentHome),
     path('teacher/home', views.teacherHome),
     path('logout/', views.logout_request),

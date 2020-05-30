@@ -9,6 +9,9 @@ class Model_assignment(models.Model):
     linked_class = models.ForeignKey(Class, on_delete=models.CASCADE, blank = True, null = True)
     linked_teacher = models.ForeignKey(User ,on_delete=models.CASCADE, blank = True, null = True)
 
+    def __str__(self):
+        return self.name
+
 # Create your models here.
 class Assignment(models.Model):
     name = models.CharField(max_length = 120)
@@ -20,4 +23,7 @@ class Assignment(models.Model):
     linked_class_linker = models.ForeignKey(class_linker, on_delete=models.CASCADE, blank = True, null = True)
 
     def __unicode__(self):
+        return self.name
+
+    def __str__(self):
         return self.name

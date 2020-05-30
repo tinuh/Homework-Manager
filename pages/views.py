@@ -180,11 +180,8 @@ def change_password_2(request, pass_1, pass_2):
     if pass_1 == pass_2:
         user.set_password(pass_1)
         user.save()
-
         user = authenticate(request, username=user.username, password=pass_1)
-
         login(request, user)
-
         response = redirect("/home")
         return response
 
@@ -192,5 +189,4 @@ def change_password_2(request, pass_1, pass_2):
 
 
 def denied(request, *args, **kwargs):
-
     return render(request, "denied.html", {})
