@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="" />
+    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +62,7 @@
       <workItem from="1585284186489" duration="1285000" />
       <workItem from="1585327645933" duration="934000" />
       <workItem from="1590001138590" duration="1416000" />
+      <workItem from="1590702957546" duration="69000" />
     </task>
     <task id="LOCAL-00001" summary="Add Files">
       <created>1583198684433</created>
