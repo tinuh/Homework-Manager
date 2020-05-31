@@ -131,16 +131,19 @@ def assignmentTeacher_add(request, *args, **kwargs):
     if request.method == "POST":
         class_link = class_linker.objects.all()
         model_assiginments = Model_assignment.objects.all()
-
-        model_assiginment = Model_assignment(name = request.POST.get('name'),description = request.POST.get('description') ,linked_teacher_id = request.user.id, linked_class_id = request.POST.get('class'))
-        model_assiginment.save()
+        try:
+            model_assiginment = Model_assignment(name = request.POST.get('name'),description = request.POST.get('description') ,linked_teacher_id = request.user.id, linked_class_id = request.POST.get('class'))
+            class_object = Class.objects.get(id=int(str(request.POST.get('class')))).id
+            model_assiginment.save()
+        except:
+            return render(request, 'teacherAssignment_add.html', context)
 
         for student in class_link:
             if str(student.enrolled_class.id) == str(request.POST.get('class')):
                 assignments = Assignment(name = request.POST.get('name'), description = request.POST.get('description'), linked_class_id = request.POST.get('class'), user_id = student.linked_user.id, linked_model_assignment_id = int(model_assiginment.id), linked_class_linker_id = int(student.id))
                 assignments.save()
 
-        class_object = Class.objects.get(id = int(str(request.POST.get('class')))).id
+
         response = redirect('/class/teacher/view/' + str(class_object))
         return response
     print(args, kwargs)
@@ -229,16 +232,89 @@ def teacherAssignmentSpecific(request, *args, **kwargs):
     id = kwargs['id']
 
     try:
-        assignment = Model_assignment.objects.get(pk = id)
+        assignmentM = Model_assignment.objects.get(pk = id)
     except:
         return redirect("/denied")
 
+    assignmentsS = Assignment.objects.filter(linked_model_assignment_id = assignmentM.id)
+    done = []
+    notdone = []
+    for assignment in assignmentsS:
+        if assignment.done:
+            done.append(assignment)
+        else:
+            notdone.append(assignment)
+
     context = {
-        'assignment': assignment,
+        'assignment': assignmentM,
+        'done': done,
+        'doneC': len(done),
+        'notdone': notdone,
+        'notdoneC': len(notdone),
     }
 
-    if request.user.profile.teacher and assignment.linked_teacher.id == request.user.id:
+    if request.user.profile.teacher and assignmentM.linked_teacher.id == request.user.id:
         return render(request, "studentAssignmentViewSpecific.html", context)
     else:
         return redirect("/denied")
 
+def teacher_edit(request, *args, **kwargs):
+    id = kwargs["id"]
+
+    if request.method != "POST":
+        try:
+            assignment = Model_assignment.objects.get(pk = id)
+        except:
+            return redirect('/denied')
+    else:
+        assignment = Model_assignment.objects.get(pk=id)
+
+    classes = Class.objects.all()
+    classess = []
+
+    for classe in classes:
+        if classe.teacher_id == request.user.id:
+            classess.append(classe)
+            
+    context = {
+        'assignment': assignment,
+        'classes': classess,
+    }
+
+    old_class = assignment.linked_class_id
+    
+    if request.method == "POST":
+        assignment.linked_class_id = classe = request.POST.get('class')
+        assignment.name = name = request.POST.get('name')
+        assignment.description = request.POST.get('description')
+        assignment.save()
+        assignment = Model_assignment.objects.get(pk=id)
+
+        linked_assignments = Assignment.objects.filter(linked_model_assignment_id = assignment.id)
+
+        if assignment.linked_class_id == old_class:
+            for assign in linked_assignments:
+                assign.name = assignment.name
+                assign.description = assignment.description
+                assign.save()
+        else:
+            for assign in linked_assignments:
+                assign.delete()
+
+            links = class_linker.objects.get(enrolled_class_id=assignment.linked_class_id)
+
+            for person in links:
+                assign = Assignment()
+                assign.name = assignment.name
+                assign.description = assignment.description
+                assign.linked_class_id = person.enrolled_class.id
+                assign.linked_class_linker_id = person.id
+                assign.linked_model_assignment_id = assignment.id
+                assign.save()
+        
+        return redirect("/class/teacher/view/" + str(assignment.linked_class.id))
+    else:
+        if not request.user.profile.teacher:
+            return redirect('/denied')
+
+        return render(request, 'teacherAssignment_edit.html', context)

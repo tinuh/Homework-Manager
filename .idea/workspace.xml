@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="" />
+    <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/templates/teacherAssignment_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/studentAssignmentViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentAssignmentViewSpecific.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/studentBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentBase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/teacherAssignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherAssignment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/teacherAssignment_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherAssignment_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,19 +46,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates" />
-      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates" />
-      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates\registration" />
-      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\static\add" />
-      <recent name="C:\Users\tinu4\homework\static\Add" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates\registration" />
       <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates" />
       <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates" />
       <recent name="C:\Users\tinu4\homework\pages\templates" />
       <recent name="C:\Users\tinu4\homework\classes\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tinu4\Documents\Programming\Personal\Homework Project\homework_manager\pages\templates" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homework Project\homework_manager\pages\templates" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\pages\templates\registration" />
+      <recent name="C:\Users\tinu4\Documents\Programming\Django Projects\Homwork Project\homework\static\add" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -69,6 +81,7 @@
       <workItem from="1590869684383" duration="1949000" />
       <workItem from="1590871839470" duration="234000" />
       <workItem from="1590877476843" duration="462000" />
+      <workItem from="1590952411116" duration="4973000" />
     </task>
     <task id="LOCAL-00001" summary="Add Files">
       <created>1583198684433</created>

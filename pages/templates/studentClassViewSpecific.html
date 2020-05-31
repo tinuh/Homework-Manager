@@ -8,16 +8,25 @@
         <div class="row align-items-center">
           <div class="col-lg-12">
             <div class="banner_text"><br><br><br><br><br>
-                <center><h1>{{class.name}}</h1>
-                <h3 style = 'color: white;'>(Class Code: {{class.code}})</h3>
-                <p style = 'color: white;'>{{ class.description }}</p><br><br><br>
-                <h1>Assignments <span class="badge badge-secondary">{{assignmentsA}}</span></h1></center>
+                <center>
+                    <h1>{{class.name}}</h1>
+                    <h3 style = 'color: white;'>(Class Code: {{class.code}})</h3>
+                    <h4 style = 'color: white;'>Taught By: {{class.teacher.first_name}}</h4>
+                    <p style = 'color: white;'>{{ class.description }}</p><br><br><br>
+                    <h1>Assignments <span class="badge badge-secondary">{{assignmentsA}}</span></h1>
+                </center>
 
                 {% for assignment in assignments %}
                 <div class="card class-card">
                   <div class="card-body">
                     <a>{{assignment.name}}</a>
                     <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a>
+                    {% if assignment.done %}
+                        <a href = "/homework/undone/{{assignment.id}}" title = "Un-Submit" class = "btn btn-dark">-✓</a>
+                    {% else %}
+                        <a href = "/homework/done/{{assignment.id}}" title = "Mark as Done" class = "btn btn-success">✓</a>
+                    {% endif %}
+
                   </div>
                 </div>
               {% endfor %}

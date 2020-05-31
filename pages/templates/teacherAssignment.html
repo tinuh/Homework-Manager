@@ -14,6 +14,7 @@
                     <div class="card-body">
                       <h3><a>{{assignment.0.name}} (<span class="badge badge-secondary" style = 'color: #00d089;'>{{assignment.1.0}}</span> Done, <span class="badge badge-secondary" style = 'color: #00d089;'>{{assignment.1.1}}</span> Assigned)({{assignment.0.linked_class.name}})</a> &nbsp;
                       <a href = "/homework/teacher/view/{{ assignment.0.id }}" title = "View" class = "btn btn-primary">👁</a>
+                      <a href = "/homework/teacher/edit/{{ assignment.0.id }}" title = "Edit" class = "btn btn-secondary">✎</a>
                       <a href = "/homework/model/delete/{{ assignment.0.id }}/0" title = "Delete" onclick="return window.confirm('Are you sure you want to delete the assignment: {{assignment.0.name}}')" class = "btn btn-danger">✗</a></h3>
                     </div>
                   </div>
