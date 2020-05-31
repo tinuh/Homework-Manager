@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/templates/teacherAssignment_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentAssignmentViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentAssignmentViewSpecific.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentBase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/studentClassViewSpecific.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/teacherAssignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherAssignment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/teacherAssignment_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherAssignment_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/templates/teacherClassViewSpecific.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +89,7 @@
       <workItem from="1590869684383" duration="1949000" />
       <workItem from="1590871839470" duration="234000" />
       <workItem from="1590877476843" duration="462000" />
-      <workItem from="1590952411116" duration="4973000" />
+      <workItem from="1590952411116" duration="5931000" />
     </task>
     <task id="LOCAL-00001" summary="Add Files">
       <created>1583198684433</created>
@@ -251,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590877826603</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Major Updates, updated class view, added assignment edit.">
+      <created>1590959631769</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1590959631769</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,13 +318,14 @@
     <MESSAGE value="Update git ignore" />
     <MESSAGE value="Make some changes with assingnment view page and joining class process." />
     <MESSAGE value="Minor Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes" />
+    <MESSAGE value="Major Updates, updated class view, added assignment edit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Major Updates, updated class view, added assignment edit." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1280" y="111" key="CommitChangelistDialog2" timestamp="1590877826174">
+    <state x="-1084" y="109" key="CommitChangelistDialog2" timestamp="1590959631281">
       <screen x="-1280" y="51" width="1280" height="984" />
     </state>
-    <state x="-1280" y="111" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590877826174" />
+    <state x="-1084" y="109" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590959631281" />
     <state x="694" y="281" key="EnvironmentVariablesDialog" timestamp="1585327863132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -322,10 +338,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585327874228" />
-    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2" timestamp="1590877836480">
+    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2" timestamp="1590959634054">
       <screen x="-1280" y="51" width="1280" height="984" />
     </state>
-    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590877836480" />
+    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590959634054" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585327651020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
