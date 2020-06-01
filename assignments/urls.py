@@ -6,6 +6,7 @@ urlpatterns = [
     path('student/view/<id>', views.studentAssignmentSpecific),
     path('teacher/view', views.assignmentsTeacher),
     path('teacher/view/<id>', views.teacherAssignmentSpecific),
+    path('teacher/student/view/<id>', views.teacherAssignmentStudentSpecific),
     path('view', views.view),
     path('add', views.add),
     path('student/add', views.assignmentStudent_add),

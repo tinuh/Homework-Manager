@@ -21,9 +21,10 @@ class Assignment(models.Model):
     done = models.BooleanField(default = False)
     linked_model_assignment = models.ForeignKey(Model_assignment, on_delete=models.CASCADE, blank = True, null = True)
     linked_class_linker = models.ForeignKey(class_linker, on_delete=models.CASCADE, blank = True, null = True)
+    submission = models.TextField(default="")
 
     def __unicode__(self):
         return self.name
 
     def __str__(self):
-        return self.name
+        return (self.name + " (" + self.user.first_name + ")")

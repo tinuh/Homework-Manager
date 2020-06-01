@@ -22,13 +22,12 @@ def view(request):
 @login_required
 def studentClass(request, *args, **kwargs):
     assignments = Assignment.objects.all()
-    class_link = class_linker.objects.all()
+    class_link = class_linker.objects.filter(linked_user_id = request.user.id)
     classes = []
 
     for link in class_link:
-        if link.linked_user == request.user:
-            classe = Class.objects.get(pk = link.enrolled_class.id)
-            classes.append(classe)
+        classe = Class.objects.get(pk = link.enrolled_class.id)
+        classes.append(classe)
 
     context = {
         'classes': classes,

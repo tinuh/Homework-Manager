@@ -1,4 +1,4 @@
-{% extends "teacherBase.html" %}
+{% extends "studentBase.html" %}
 
 {% block main-content %}
 
@@ -11,9 +11,15 @@
                 <center><h1>{{assignment.name}}</h1>
                         <p style = 'color: white;'>{{ assignment.description }}</p><br><br><br>
                     {% if assignment.done %}
-                        <a class = "btn btn-danger" href = "/homework/undone/{{ assignment.id }}">Mark Assignment as not Done</a>
+                        <label style="color: #ffffff">Submission</label><textarea class = "form-control" readonly>{{ assignment.submission }}</textarea><br><br>
+                        <a class = "btn btn-danger" href = "/homework/undone/{{ assignment.id }}">Un-Submit Assignment</a>
                     {% elif assignment.linked_model_assignment %}
-                        <a class = "btn btn-success" href = "/homework/done/{{ assignment.id }}">Mark Assignment as Done</a>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <label style="color: #ffffff">Submission</label><textarea name = "submission" class = "form-control">{{ assignment.submission }}</textarea><br><br>
+                            <button type="submit" name = "save_draft" class="btn btn-secondary">Save Draft</button>
+                            <button class = "btn btn-success" type = "submit">Submit Assignment</button>
+                        </form>
                     {% else %}
                 </center>
                     <center><h1>Done <span class="badge badge-secondary">{{doneC}}</span></h1></center>
@@ -21,7 +27,7 @@
                         <div class="card class-card">
                           <div class="card-body">
                             <a>{{student.user.first_name}}</a>
-                            <a href = "/homework/undone/{{student.id}}" title = "Un-Submit" class = "btn btn-dark">-✓</a>
+                            <a href = "/homework/teacher/student/view/{{ student.id }}" title = "View" class = "btn btn-primary">👁</a>
                           </div>
                         </div>
                     {% endfor %}
@@ -30,7 +36,7 @@
                         <div class="card class-card">
                           <div class="card-body">
                             <a>{{student.user.first_name}}</a>
-                            <a href = "/homework/done/{{student.id}}" title = "Submit" class = "btn btn-success">✓</a>
+                            <a href = "/homework/teacher/student/view/{{ student.id }}" title = "View" class = "btn btn-primary">👁</a>
                           </div>
                         </div>
                     {% endfor %}

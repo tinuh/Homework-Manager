@@ -21,12 +21,6 @@
                   <div class="card-body">
                     <a>{{assignment.name}}</a>
                     <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a>
-                    {% if assignment.done %}
-                        <a href = "/homework/undone/{{assignment.id}}" title = "Un-Submit" class = "btn btn-dark">-✓</a>
-                    {% else %}
-                        <a href = "/homework/done/{{assignment.id}}" title = "Mark as Done" class = "btn btn-success">✓</a>
-                    {% endif %}
-
                   </div>
                 </div>
               {% endfor %}

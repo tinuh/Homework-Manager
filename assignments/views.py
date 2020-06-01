@@ -65,29 +65,39 @@ def assignmentsTeacher(request, *args, **kwargs):
 @login_required
 def assignmentsStudent(request, *args, **kwargs):
     classes = Class.objects.all()
-    assignments = Assignment.objects.filter(user_id=request.user.id)
-    AssignmentsA = 0
-    AssignmentsD = 0
 
-    for assignment in assignments:
-        if assignment.user == request.user and assignment.done == False:
-            AssignmentsA += 1
+    if request.method == "POST":
+        assignment = Assignment.objects.get(id=request.POST.get("assign-id"))
+        assignment.submission = request.POST.get("submission")
+        if "save_draft" not in request.POST:
+            assignment.done = True
+        assignment.save()
 
-    for assignment in assignments:
-        if assignment.user == request.user and assignment.done == True:
-            AssignmentsD += 1
+        return redirect("/homework/student/view/" + str(assignment.id))
+    else:
+        assignments = Assignment.objects.filter(user_id=request.user.id)
+        AssignmentsA = 0
+        AssignmentsD = 0
+
+        for assignment in assignments:
+            if assignment.user == request.user and assignment.done == False:
+                AssignmentsA += 1
+
+        for assignment in assignments:
+            if assignment.user == request.user and assignment.done == True:
+                AssignmentsD += 1
 
 
-    context = {
-        'classes': classes,
-        'assignments': assignments,
-        'AssignmentsA': AssignmentsA,
-        'AssignmentsD': AssignmentsD,
-    }
+        context = {
+            'classes': classes,
+            'assignments': assignments,
+            'AssignmentsA': AssignmentsA,
+            'AssignmentsD': AssignmentsD,
+        }
 
-    print(args, kwargs)
-    print(request.user)
-    return render(request, 'studentAssignment.html', context)
+        print(args, kwargs)
+        print(request.user)
+        return render(request, 'studentAssignment.html', context)
 
 @login_required
 def assignmentStudent_add(request, *args, **kwargs):
@@ -222,11 +232,23 @@ def studentAssignmentSpecific(request, *args, **kwargs):
     except:
         return redirect("/denied")
 
-    context = {
-        'assignment': assignment,
-    }
+    if request.method == "POST":
+        assignment.submission = request.POST.get("submission")
+        if "save_draft" not in request.POST:
+            assignment.done = True
+        assignment.save()
+        
+        return redirect("/homework/student/view/" + str(assignment.id))
+    else:
+        context = {
+            'assignment': assignment,
+        }
 
-    return render(request, "studentAssignmentViewSpecific.html", context)
+        if assignment.user.id == request.user.id:
+            return render(request, "studentAssignmentViewSpecific.html", context)
+        else:
+            return redirect("/denied")
+
 
 def teacherAssignmentSpecific(request, *args, **kwargs):
     id = kwargs['id']
@@ -318,3 +340,27 @@ def teacher_edit(request, *args, **kwargs):
             return redirect('/denied')
 
         return render(request, 'teacherAssignment_edit.html', context)
+
+def teacherAssignmentStudentSpecific(request, *args, **kwargs):
+    id = kwargs['id']
+
+    try:
+        assignment = Assignment.objects.get(pk = id)
+    except:
+        return redirect("/denied")
+
+    if request.method == "POST":
+        assignment.submission = request.POST.get("submission")
+        assignment.done = True
+        assignment.save()
+        
+        return redirect("/homework/teacher/student/view/" + str(assignment.id))
+    else:
+        context = {
+            'assignment': assignment,
+        }
+
+        if request.user.profile.teacher and assignment.linked_class.teacher_id == request.user.id:
+            return render(request, "teacherAssignmentViewSpecific.html", context)
+        else:
+            return redirect("/denied")

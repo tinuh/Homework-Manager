@@ -14,7 +14,7 @@
                     <div class="card-body">
                       <a>{{assignment.name}}</a>&nbsp;
                       <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a>
-                      <a href = "/homework/done/{{assignment.id}}" title = "Mark as Done" class = "btn btn-success">✓</a>
+                      <a href = "" type="button" data-toggle="modal" data-sub = "{{ assignment.submission }}" data-assignid = "{{ assignment.id }}" data-assigname = "{{assignment.name}}" data-target="#exampleModal" title = "Mark as Done" class = "btn btn-success">✓</a>
                       {% if not assignment.linked_model_assignment %}
                       <a href = "/homework/delete/{{assignment.id}}" title = "Delete" class = "btn btn-danger">✗</a>
                       {% endif %}
@@ -44,4 +44,45 @@
       </div>
     </section>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form method="POST">
+              {% csrf_token %}
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Submission</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <input type = "text" id = "assign-id" name = "assign-id" style="display: none">
+                <textarea class = "form-control" id = "submission" name = "submission" style = "height: 150px"></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" name = "save_draft" class="btn btn-secondary">Save Draft</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block static %}
+<!-- Script -->
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('assigname') // Extract info from data-* attributes
+          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+          var modal = $(this)
+          modal.find('.modal-title').text('Submission for ' + recipient);
+          modal.find('#submission').text(button.data('sub'));
+          document.getElementById('assign-id').value = button.data("assignid");
+        })
+    </script>
 {% endblock %}

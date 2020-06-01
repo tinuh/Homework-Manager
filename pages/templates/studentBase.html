@@ -66,8 +66,12 @@
                       Classes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="/class/student/join">Join a Class</a>
-                      <a class="dropdown-item" href="/class/student/view">View Classes</a>
+                      {% if request.user.profile.teacher %}
+                      <a class="dropdown-item" href="/class/add">Create a Class</a>
+                      {% else %}
+                       <a class="dropdown-item" href="/class/student/join">Join a Class</a>
+                      {% endif %}
+                      <a class="dropdown-item" href="/class/view">View Classes</a>
                     </div>
                   </li>
                   <li class="nav-item dropdown">
@@ -83,7 +87,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="/homework/add">Add Homework</a>
-                      <a class="dropdown-item" href="/homework/student/view">View Homework</a>
+                      <a class="dropdown-item" href="/homework/view">View Homework</a>
                     </div>
                   </li>
                   <li class="nav-item dropdown">
@@ -121,6 +125,11 @@
     {% endblock %}
 </body>
 
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
     <!-- jquery plugins here-->
     <script src="/static/landing_page/js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
@@ -135,5 +144,9 @@
     <script src="/static/landing_page/js/jquery.nice-select.min.js"></script>
     <!-- custom js -->
     <script src="/static/landing_page/js/custom.js"></script>
+
+    {% block static %}
+        JS
+    {% endblock %}
 
 </html>
