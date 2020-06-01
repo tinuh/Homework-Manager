@@ -20,7 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="088edced-41a7-47ff-a499-87703679565c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/homework_manager/v16/.suo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +56,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -89,7 +94,8 @@
       <workItem from="1590869684383" duration="1949000" />
       <workItem from="1590871839470" duration="234000" />
       <workItem from="1590877476843" duration="462000" />
-      <workItem from="1590952411116" duration="5931000" />
+      <workItem from="1590952411116" duration="6695000" />
+      <workItem from="1590972081896" duration="138000" />
     </task>
     <task id="LOCAL-00001" summary="Add Files">
       <created>1583198684433</created>
@@ -266,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590959631769</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Workspace updates.">
+      <created>1590965563442</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1590965563442</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,13 +332,14 @@
     <MESSAGE value="Make some changes with assingnment view page and joining class process." />
     <MESSAGE value="Minor Changes" />
     <MESSAGE value="Major Updates, updated class view, added assignment edit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Major Updates, updated class view, added assignment edit." />
+    <MESSAGE value="Workspace updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="Workspace updates." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1084" y="109" key="CommitChangelistDialog2" timestamp="1590959631281">
+    <state x="-1084" y="109" key="CommitChangelistDialog2" timestamp="1590965563051">
       <screen x="-1280" y="51" width="1280" height="984" />
     </state>
-    <state x="-1084" y="109" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590959631281" />
+    <state x="-1084" y="109" key="CommitChangelistDialog2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590965563051" />
     <state x="694" y="281" key="EnvironmentVariablesDialog" timestamp="1585327863132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -334,14 +348,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585327858038" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1585327874228">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585327874228" />
-    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2" timestamp="1590959634054">
+    <state x="-1116" y="262" key="SettingsEditor" timestamp="1590972202459">
       <screen x="-1280" y="51" width="1280" height="984" />
     </state>
-    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590959634054" />
+    <state x="-1116" y="262" key="SettingsEditor/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590972202459" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585327874228" />
+    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2" timestamp="1590965569810">
+      <screen x="-1280" y="51" width="1280" height="984" />
+    </state>
+    <state x="-1048" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1280.51.1280.984@-1280.51.1280.984" timestamp="1590965569810" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585327651020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
