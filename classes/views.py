@@ -231,7 +231,7 @@ def delete(request, *args, id):
     except:
         return redirect('/denied')
 
-    if request.user.profile.teacher and classes.teacher.id == request.id:
+    if request.user.profile.teacher and classes.teacher_id == request.user.id:
         classes.delete()
 
         response = redirect('/class/teacher/view')
