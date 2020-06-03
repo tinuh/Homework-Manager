@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+#if you forked this repository create a env.py file and add enviroment variables
+from .env import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +22,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6$quaimi!xgfz#swhx5!&3q0v6r#x2hhk@uy5q(5f+*83)vqg0'
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['homework.tinu.tech', "*"]
+DEBUG = env("DEBUG")
+if env("DEBUG"):
+    ALLOWED_HOSTS = ["localhost"]
+else:
+    ALLOWED_HOSTS = ['homework.tinu.tech', "192.168.1.3"]
 
 
 # Application definition
@@ -88,14 +92,14 @@ WSGI_APPLICATION = 'homework_manager.wsgi.application'
 #     }
 #}
 
-DATABASES = {
 
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hmanager',
-        "USER": 'postgres',
-        "PASSWORD": 'hmadmin',
-        "HOST": 'homework.tinu.tech',
+        'NAME': env('DATABASE_NAME'),
+        "USER": env('DATABASE_USER'),
+        "PASSWORD": env('DATABASE_PWD'),
+        "HOST": env('DATABASE_HOST'),
         'PORT': '5432'
     }
 }
