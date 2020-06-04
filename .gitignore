@@ -2,3 +2,4 @@
 .vs
 .vscode
 homework_manager/env.py
+__pycache__
