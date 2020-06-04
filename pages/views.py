@@ -26,7 +26,6 @@ def site_map(request):
     return render(request, 'site_map.html', {})
 
 def new(request, *args, **kwargs):
-
     return render(request, 'typeOfUser.html', {})
 
 def newUser(request, *args, type):
@@ -44,6 +43,9 @@ def newUser(request, *args, type):
 
         if len(request.POST.get('password')) < 8:
             message.append("The password must be atleast 8 digits!")
+
+        if len(request.POST.get('fullName')) > 30:
+            message.append("The Name must be less than 30 digits!")
 
         if message != []:
             print(args)
@@ -89,6 +91,23 @@ def decidehome(request, *args, **kwargs):
 def editProfile(request, *args, **kwargs):
 
     if request.method == 'POST':
+        message = []
+        if len(request.POST.get('firstname')) > 30:
+            message.append("The Name must by less than 30 Digits!")
+
+        try:
+            User.objects.get(username = request.POST.get('username'))
+        except:
+            pass
+        else:
+            message.append("The username is already taken!")
+
+        if message != []:
+            print(args, kwargs)
+            print(request.user)
+            return render(request, 'editProfile.html', {'message': message})
+
+
         first_name =  request.POST.get('firstname')
         username = request.POST.get('username')
         user = User.objects.get(pk = request.user.id)
