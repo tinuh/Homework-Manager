@@ -35,22 +35,6 @@
   	<link rel="stylesheet" type="text/css" href="/static/login/css/main.css">
 </head>
 
-<script>
-	function checkForm(){
-		if (window.document.signUp.password.value != window.document.signUp.ConformPassword){
-			window.alert("Passwords aren't matching");
-		}
-		else {
-			if (window.document.signUp.password.value.length !> 8){
-				window.alert("Password is too short, must be atleast 8 characters");
-			}
-			else {
-				window.document.signUp.submit();
-			}
-		}
-	}
-</script>
-
 <body style="background-color: #666666;">
   <div class="limiter">
     <div class="container-login100">
@@ -58,6 +42,14 @@
     <form method="POST" class="login100-form validate-form" name = "signUp">
         {% csrf_token %}
         <span class="login100-form-title p-b-43"> Sign up </span>
+        {% if message %}
+          {% for i in message %}
+          <div class="alert alert-danger">
+            <a class="close" href="#" data-dismiss="alert">×</a>
+            {{ i }}
+          </div>
+          {% endfor %}
+        {% endif %}
 
 		<div class="wrap-input100 validate-input" data-validate = "Valid Name must be entered">
 			<input class="input100" type="text" name="fullName">
@@ -84,7 +76,7 @@
 		</div>
 
 		<div class="container-login100-form-btn">
-			<button onsubmit="return checkform()" class="login100-form-btn"> Sign Up </button>
+			<button type = "submit" class="login100-form-btn"> Sign Up </button>
 		</div>
 
 		<div class="text-center p-t-46 p-b-20">

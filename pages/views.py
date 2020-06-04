@@ -30,39 +30,48 @@ def new(request, *args, **kwargs):
     return render(request, 'typeOfUser.html', {})
 
 def newUser(request, *args, type):
-
     if request.method == 'POST':
-        if request.POST.get('password') == request.POST.get('ConformPassword'):
-            user = User()
-            user.first_name = request.POST.get('fullName')
-            user.username = request.POST.get('username')
-            user.set_password(request.POST.get('password'))
-            user.save()
+        message = []
+        if request.POST.get('password') != request.POST.get('ConformPassword'):
+            message.append("The Passwords do not match!")
 
-            user = authenticate(request, username=user.username, password=request.POST.get('password'))
-
-            login(request, user)
-
-            profile = Profile()
-            profile.user_id = request.user.id
-            if type == "teacher":
-                profile.teacher = True
-            profile.save()
-
-            response = redirect('/home')
-            return response
+        try:
+            User.objects.get(username = request.POST.get('username'))
+        except:
+            pass
         else:
+            message.append("The username is already Taken!")
+
+        if len(request.POST.get('password')) < 8:
+            message.append("The password must be atleast 8 digits!")
+
+        if message != []:
             print(args)
             print(request.user)
-            return render(request, 'newUser.html', {})
-    else:
-        print(args)
-        print(request.user)
-        return render(request, 'newUser.html', {})
+            return render(request, 'newUser.html', {'message': message})
 
-    print(args, kwargs)
+        user = User()
+        user.first_name = request.POST.get('fullName')
+        user.username = request.POST.get('username')
+        user.set_password(request.POST.get('password'))
+        user.save()
+
+        user = authenticate(request, username=user.username, password=request.POST.get('password'))
+
+        login(request, user)
+
+        profile = Profile()
+        profile.user_id = request.user.id
+        if type == "teacher":
+            profile.teacher = True
+        profile.save()
+
+        response = redirect('/home')
+        return response
+
+    print(args)
     print(request.user)
-    return render(request, 'login.html', {})
+    return render(request, 'newUser.html', {})
 
 def decidehome(request, *args, **kwargs):
     if request.user.is_authenticated:
@@ -167,8 +176,34 @@ def change_password(request):
     }
 
     if request.method == "POST":
-        if user.check_password(request.POST.get('c_pass')):
-            return render(request, "change_password_2.html")
+        if request.POST.get("form_type") == "form-1":
+            if user.check_password(request.POST.get('c_pass')):
+                return render(request, "change_password_2.html")
+            else:
+                context["message"] = "Incorrect Password Entered!"
+                return render(request, "change_password.html", context)
+        elif request.POST.get("form_type") == "form-2":
+            pass_1 = request.POST.get("n_pass")
+            pass_2 = request.POST.get("n_pass_2")
+            message = []
+
+            if request.user.id != 1 and request.user.id != 23:
+                if len(pass_1) < 8:
+                    message.append("Length of Password must be 8 digits")
+
+            if pass_1 != pass_2:
+                message.append("Passwords do not match!")
+            if message != []:
+                return render(request, "change_password_2.html", {'message': message})
+
+            user = User.objects.get(pk=request.user.id)
+            user.set_password(pass_1)
+            user.save()
+            user = authenticate(request, username=user.username, password=pass_1)
+            login(request, user)
+            response = redirect("/home")
+            return response
+
 
     return render(request, "change_password.html", context)
 

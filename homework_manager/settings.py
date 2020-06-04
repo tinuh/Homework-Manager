@@ -27,7 +27,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 if env("DEBUG"):
-    ALLOWED_HOSTS = ["localhost", 'homework.tinu.tech']
+    ALLOWED_HOSTS = ["localhost"]
 else:
     ALLOWED_HOSTS = ['homework.tinu.tech', "192.168.1.3"]
 
