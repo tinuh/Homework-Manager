@@ -95,12 +95,13 @@ def editProfile(request, *args, **kwargs):
         if len(request.POST.get('firstname')) > 30:
             message.append("The Name must by less than 30 Digits!")
 
-        try:
-            User.objects.get(username = request.POST.get('username'))
-        except:
-            pass
-        else:
-            message.append("The username is already taken!")
+        if request.user.username != request.POST.get('username'):
+            try:
+                User.objects.get(username = request.POST.get('username'))
+            except:
+                pass
+            else:
+                message.append("The username is already taken!")
 
         if message != []:
             print(args, kwargs)
