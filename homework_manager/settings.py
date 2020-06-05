@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Third Party apps
+    'sslserver',
 
     #Project apps
     'classes',
