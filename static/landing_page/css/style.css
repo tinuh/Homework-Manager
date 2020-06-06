@@ -2348,9 +2348,7 @@ ul {
 .banner_part {
   min-height: 800px;
   position: relative;
-  overflow: hidden;
   background-repeat: no-repeat;
-  background-size: content;
   background-position: center;
   z-index: 1;
 }
