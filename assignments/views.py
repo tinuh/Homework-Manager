@@ -334,7 +334,7 @@ def teacher_edit(request, *args, **kwargs):
                 assign.linked_model_assignment_id = assignment.id
                 assign.save()
         
-        return redirect("/class/teacher/view/" + str(assignment.linked_class.id))
+        return redirect("/homework/teacher/view/" + str(assignment.id))
     else:
         if not request.user.profile.teacher:
             return redirect('/denied')
