@@ -1,4 +1,4 @@
-{% extends "teacherBase.html" %}
+{% extends "base.html" %}
 
 {% block main-content %}
     <!-- banner part start-->
@@ -6,22 +6,24 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-12">
-            <div class="banner_text"><br><br><br><br><br>
+            <div class="banner_text">
+              <div class="banner_text_iner"><br><br><br><br><br>
                 <center><h1>Classes</h1></center>
                 {% for class in classes %}
                 <div class="card class-card">
                   <div class="card-body">
                     <a>{{class.name}}</a>&nbsp;
-                    <a href = "/class/teacher/view/{{class.id}}" title = "View" class = "btn btn-primary">👁</a>
-                    <a href = "/class/edit/{{ class.id }}" title = "Edit" class = "btn btn-secondary">✎</a>
-                    <a href = "/class/delete/{{class.id}}" title = "Delete" onclick="return window.confirm('Are you sure you want to delete the class: {{class.name}}')" class = "btn btn-danger">✗</a>
+                    <a href = "/class/student/view/{{class.id}}" title = "View" class = "btn btn-primary">👁</a>
+                    <a href = "/class/remove/student/{{class.id}}/{{request.user.id}}" title = "Un-Enroll" onclick=" return window.confirm('Are you sure you want to Un-enroll?');" class = "btn btn-danger">✗</a>
                   </div>
                 </div>
                 {% endfor %}
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
 
 {% endblock %}

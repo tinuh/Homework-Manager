@@ -38,7 +38,7 @@ def studentClass(request, *args, **kwargs):
 
     print(args, kwargs)
     print(request.user)
-    return render(request, 'studentClass.html', context)
+    return render(request, 'classes/student/index.html', context)
 
 @login_required
 def teacherClass(request, *args, **kwargs):
@@ -63,7 +63,7 @@ def teacherClass(request, *args, **kwargs):
 
         print(args, kwargs)
         print(request.user)
-        return render(request, "teacherClass.html", context)
+        return render(request, "classes/teacher/index.html", context)
     else:
         response = redirect('/denied')
         return response
@@ -110,7 +110,7 @@ def teacherSpecificClass(request, *args, id):
             'studentsA': len(students),
         }
 
-        return render(request, 'teacherClassViewSpecific.html', context)
+        return render(request, 'classes/teacher/view.html', context)
 
     else:
         response = redirect('/denied')
@@ -140,7 +140,7 @@ def studentSpecificClass(request, *args, id):
             'assignmentsA': assignmentsA,
         }
 
-        return render(request, 'studentClassViewSpecific.html', context)
+        return render(request, 'classes/student/view.html', context)
 
     except:
         response = redirect('/denied')
@@ -186,7 +186,7 @@ def class_add(request, *args, **kwargs):
         return response
     print(args, kwargs)
     print(request.user)
-    return render(request, 'class_add.html', context)
+    return render(request, 'classes/teacher/add.html', context)
 
 @login_required
 def class_edit(request, *args, **kwargs):
@@ -222,7 +222,7 @@ def class_edit(request, *args, **kwargs):
         return response
     print(args, kwargs)
     print(request.user)
-    return render(request, 'class_edit.html', context)
+    return render(request, 'classes/teacher/edit.html', context)
 
 @login_required
 def delete(request, *args, id):
@@ -269,7 +269,7 @@ def join_class(request, *args, **kwargs):
 
     print(args, kwargs)
     print(request.user)
-    return render(request, "join_class.html", {})
+    return render(request, "classes/student/join.html", {})
 
 @login_required
 def remove_student(request,*args, class_id, user_id):

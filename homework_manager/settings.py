@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'classes',
     'assignments',
     'profiles',
+    'pages',
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,7 @@ ROOT_URLCONF = 'homework_manager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "pages/templates")],
+        'DIRS': [os.path.join(BASE_DIR, "homework_manager/templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

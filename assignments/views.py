@@ -30,7 +30,7 @@ def add(request):
         response = '/denied'
     return redirect(response)
 
-@login_required()
+@login_required
 def assignmentsTeacher(request, *args, **kwargs):
     classes = Class.objects.all()
     assignments = Assignment.objects.all()
@@ -59,7 +59,7 @@ def assignmentsTeacher(request, *args, **kwargs):
 
     print(args, kwargs)
     print(request.user)
-    return render(request, 'teacherAssignment.html', context)
+    return render(request, 'assignments/teacher/index.html', context)
 
 
 @login_required
@@ -97,7 +97,7 @@ def assignmentsStudent(request, *args, **kwargs):
 
         print(args, kwargs)
         print(request.user)
-        return render(request, 'studentAssignment.html', context)
+        return render(request, 'assignments/student/index.html', context)
 
 @login_required
 def assignmentStudent_add(request, *args, **kwargs):
@@ -120,7 +120,7 @@ def assignmentStudent_add(request, *args, **kwargs):
         return response
     print(args, kwargs)
     print(request.user)
-    return render(request, 'studentAssignment_add.html', context)
+    return render(request, 'assignments/student/add.html', context)
 
 @login_required
 def assignmentTeacher_add(request, *args, **kwargs):
@@ -146,7 +146,7 @@ def assignmentTeacher_add(request, *args, **kwargs):
             class_object = Class.objects.get(id=int(str(request.POST.get('class')))).id
             model_assiginment.save()
         except:
-            return render(request, 'teacherAssignment_add.html', context)
+            return render(request, 'assignments/teacher/add.html', context)
 
         for student in class_link:
             if str(student.enrolled_class.id) == str(request.POST.get('class')):
@@ -158,7 +158,7 @@ def assignmentTeacher_add(request, *args, **kwargs):
         return response
     print(args, kwargs)
     print(request.user)
-    return render(request, 'teacherAssignment_add.html', context)
+    return render(request, 'assignments/teacher/add.html', context)
 
 @login_required
 def deleteStudent(request, *args, id):
@@ -245,7 +245,7 @@ def studentAssignmentSpecific(request, *args, **kwargs):
         }
 
         if assignment.user.id == request.user.id:
-            return render(request, "studentAssignmentViewSpecific.html", context)
+            return render(request, "assignments/student/view.html", context)
         else:
             return redirect("/denied")
 
@@ -276,7 +276,7 @@ def teacherAssignmentSpecific(request, *args, **kwargs):
     }
 
     if request.user.profile.teacher and assignmentM.linked_teacher.id == request.user.id:
-        return render(request, "studentAssignmentViewSpecific.html", context)
+        return render(request, "assignments/student/view.html", context)
     else:
         return redirect("/denied")
 
@@ -339,7 +339,7 @@ def teacher_edit(request, *args, **kwargs):
         if not request.user.profile.teacher:
             return redirect('/denied')
 
-        return render(request, 'teacherAssignment_edit.html', context)
+        return render(request, 'assignments/teacher/edit.html', context)
 
 def teacherAssignmentStudentSpecific(request, *args, **kwargs):
     id = kwargs['id']
@@ -361,6 +361,6 @@ def teacherAssignmentStudentSpecific(request, *args, **kwargs):
         }
 
         if request.user.profile.teacher and assignment.linked_class.teacher_id == request.user.id:
-            return render(request, "teacherAssignmentViewSpecific.html", context)
+            return render(request, "assignments/teacher/view.html", context)
         else:
             return redirect("/denied")

@@ -16,16 +16,16 @@ from django.contrib import messages
 def welcome(request, *args, **kwargs):
     print(args, kwargs)
     print(request.user)
-    return render(request, 'welcome.html', {})
+    return render(request, 'landing.html', {})
 
 def about(request):
-    return render(request, 'about.html', {})
+    return render(request, 'pages/about.html', {})
 
 def site_map(request):
-    return render(request, 'site_map.html', {})
+    return render(request, 'pages/site_map.html', {})
 
 def new(request, *args, **kwargs):
-    return render(request, 'typeOfUser.html', {})
+    return render(request, 'pages/typeOfUser.html', {})
 
 def newUser(request, *args, type):
     if request.method == 'POST':
@@ -49,7 +49,7 @@ def newUser(request, *args, type):
         if message != []:
             print(args)
             print(request.user)
-            return render(request, 'newUser.html', {'message': message})
+            return render(request, 'register.html', {'message': message})
 
         user = User()
         user.first_name = request.POST.get('fullName')
@@ -72,7 +72,7 @@ def newUser(request, *args, type):
 
     print(args)
     print(request.user)
-    return render(request, 'newUser.html', {})
+    return render(request, 'register.html', {})
 
 def decidehome(request, *args, **kwargs):
     if request.user.is_authenticated:
@@ -85,42 +85,6 @@ def decidehome(request, *args, **kwargs):
         response = redirect('/')
 
     return response
-
-@login_required
-def editProfile(request, *args, **kwargs):
-
-    if request.method == 'POST':
-        message = []
-        if len(request.POST.get('firstname')) > 30:
-            message.append("The Name must by less than 30 Digits!")
-
-        if request.user.username != request.POST.get('username'):
-            try:
-                User.objects.get(username = request.POST.get('username'))
-            except:
-                pass
-            else:
-                message.append("The username is already taken!")
-
-        if message != []:
-            print(args, kwargs)
-            print(request.user)
-            return render(request, 'editProfile.html', {'message': message})
-
-
-        first_name =  request.POST.get('firstname')
-        username = request.POST.get('username')
-        user = User.objects.get(pk = request.user.id)
-        user.first_name = first_name
-        user.username = username
-        user.save()
-
-        response = redirect('/home')
-        return response
-
-    print(args, kwargs)
-    print(request.user)
-    return render(request, 'editProfile.html', {})
 
 @login_required
 def studentHome(request, *args, **kwargs):
@@ -153,7 +117,7 @@ def studentHome(request, *args, **kwargs):
 
     print(args, kwargs)
     print(request.user)
-    return render(request, 'studentHome.html', context)
+    return render(request, 'pages/studentHome.html', context)
 
 @login_required
 def teacherHome(request, *args, **kwargs):
@@ -177,7 +141,7 @@ def teacherHome(request, *args, **kwargs):
 
     print(args, kwargs)
     print(request.user)
-    return render(request, 'teacherHome.html', context)
+    return render(request, 'pages/teacherHome.html', context)
 
 @login_required()
 def logout_request(request):
@@ -186,64 +150,9 @@ def logout_request(request):
     response = redirect("/login")
     return response
 
-@login_required()
-def change_password(request):
-    user = User.objects.get(pk = request.user.id)
-
-    context = {
-        "user": user
-    }
-
-    if request.method == "POST":
-        if request.POST.get("form_type") == "form-1":
-            if user.check_password(request.POST.get('c_pass')):
-                return render(request, "change_password_2.html")
-            else:
-                context["message"] = "Incorrect Password Entered!"
-                return render(request, "change_password.html", context)
-        elif request.POST.get("form_type") == "form-2":
-            pass_1 = request.POST.get("n_pass")
-            pass_2 = request.POST.get("n_pass_2")
-            message = []
-
-            if request.user.id != 1 and request.user.id != 23:
-                if len(pass_1) < 8:
-                    message.append("Length of Password must be 8 digits")
-
-            if pass_1 != pass_2:
-                message.append("Passwords do not match!")
-            if message != []:
-                return render(request, "change_password_2.html", {'message': message})
-
-            user = User.objects.get(pk=request.user.id)
-            user.set_password(pass_1)
-            user.save()
-            user = authenticate(request, username=user.username, password=pass_1)
-            login(request, user)
-            response = redirect("/home")
-            return response
-
-
-    return render(request, "change_password.html", context)
-
-@login_required()
-def change_password_2(request, pass_1, pass_2):
-
-    user = User.objects.get(pk=request.user.id)
-
-    if pass_1 == pass_2:
-        user.set_password(pass_1)
-        user.save()
-        user = authenticate(request, username=user.username, password=pass_1)
-        login(request, user)
-        response = redirect("/home")
-        return response
-
-    return render(request, "change_password_2.html", {})
-
 
 def denied(request, *args, **kwargs):
-    return render(request, "denied.html", {})
+    return render(request, "pages/denied.html", {})
 
 @login_required
 def update(request):
@@ -260,4 +169,4 @@ def update(request):
         'message': message
     }
 
-    return render(request, 'update.html', context)
+    return render(request, 'pages/update.html', context)
