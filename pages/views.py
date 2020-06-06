@@ -8,21 +8,20 @@ from classes.models import Class
 from classes.models import class_linker
 from assignments.models import Assignment
 from profiles.models import Profile
+import os
+import subprocess
 from django.contrib import messages
 
 # Create your views here.
 def welcome(request, *args, **kwargs):
-
     print(args, kwargs)
     print(request.user)
     return render(request, 'welcome.html', {})
 
 def about(request):
-
     return render(request, 'about.html', {})
 
 def site_map(request):
-
     return render(request, 'site_map.html', {})
 
 def new(request, *args, **kwargs):
@@ -245,3 +244,20 @@ def change_password_2(request, pass_1, pass_2):
 
 def denied(request, *args, **kwargs):
     return render(request, "denied.html", {})
+
+@login_required
+def update(request):
+
+    if not request.user.is_superuser:
+        return redirect("/denied")
+
+    message = ""
+
+    if request.method == "POST":
+        message = subprocess.run(["git", "pull"], capture_output=True)
+
+    context = {
+        'message': message
+    }
+
+    return render(request, 'update.html', context)

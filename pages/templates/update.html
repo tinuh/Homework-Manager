@@ -1,0 +1,30 @@
+{% extends "teacherbase.html" %}
+
+{% block main-content %}
+
+    <!-- banner part start-->
+    <section class="banner_part background_teal">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <div class="banner_text"><br><br><br><br><br>
+                <center><h1>Update Tool</h1>
+                <form method="post">
+                    {% csrf_token %}
+
+                    {% if message %}
+                        <div class="alert alert-success">
+                        <a class="close" href="#" data-dismiss="alert">×</a>
+                        {{ message }}
+                        </div>
+                    {% endif %}
+
+                    <button type="submit" class = "btn btn-danger">Pull Updates from GitHub</button>
+                </form></center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
