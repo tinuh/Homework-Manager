@@ -246,7 +246,12 @@ def join_class(request, *args, **kwargs):
         try:
             classe = Class.objects.get(code = str(request.POST.get('code')))
         except:
-            return redirect("/class/student/join")
+            context = {
+                'message': "The class code is invalid!"
+            }
+
+            return render(request, "classes/student/join.html", context)
+
         class_link = class_linker()
         class_link.linked_user_id = request.user.id
         class_link.enrolled_class_id = classe.id
