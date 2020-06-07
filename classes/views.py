@@ -75,7 +75,7 @@ def teacherSpecificClass(request, *args, id):
     except:
         return redirect("/denied")
     if request.user.profile.teacher and classe.teacher == request.user:
-        class_link = class_linker.objects.all()
+        class_link = class_linker.objects.filter(enrolled_class_id=classe.id)
         model_assignment = Model_assignment.objects.all()
         assignmentss = []
         assignments = Assignment.objects.filter()
@@ -84,9 +84,7 @@ def teacherSpecificClass(request, *args, id):
 
 
         for links in class_link:
-                if links.enrolled_class.id == classe.id:
-                    print(links.linked_user.first_name)
-                    students.append(links.linked_user)
+            students.append(links.linked_user)
 
         count = -1
         assignmentsC = 0
