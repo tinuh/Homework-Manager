@@ -2,17 +2,24 @@
 
 {% block main-content %}
     <script>
-        function random() {
-            let students = []
-            {% for student in students %}
-                students.push("{{ student.first_name }}")
-            {% endfor %}
+        let students = []
+        {% for student in students %}
+            students.push("{{ student.first_name }}")
+        {% endfor %}
 
-            var student = students[Math.floor(Math.random() * students.length)];
+        function random() {
+            if (students.length === 0){
+                {% for student in students %}
+                    students.push("{{ student.first_name }}")
+                {% endfor %}
+            }
+
+            var studentNum = Math.floor(Math.random() * students.length);
 
             document.getElementById("modal-title").innerHTML = "Random Student";
-            document.getElementById("modal-content").innerHTML = student;
+            document.getElementById("modal-content").innerHTML = students[studentNum];
             document.getElementById("spin").style.display = "block";
+            students.splice(studentNum, 1)
 
             $('#modal').modal('show')
         }
