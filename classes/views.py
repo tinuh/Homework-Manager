@@ -250,6 +250,17 @@ def join_class(request, *args, **kwargs):
 
             return render(request, "classes/student/join.html", context)
 
+        try:
+            before = class_linker.objects.get(enrolled_class_id=classe.id, linked_user_id=request.user.id)
+        except:
+            pass
+        else:
+            context = {
+                'message': "You cannot join a class twice!"
+            }
+
+            return render(request, "classes/student/join.html", context)
+
         class_link = class_linker()
         class_link.linked_user_id = request.user.id
         class_link.enrolled_class_id = classe.id
