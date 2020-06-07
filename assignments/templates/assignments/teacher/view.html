@@ -13,12 +13,12 @@
                 <p style = 'color: white;'>{{ assignment.description }}</p><br><br><br>
 
                 {% if assignment.done %}
-                    <label style="color: #ffffff">Submission</label><textarea class = "form-control" readonly>{{ assignment.submission }}</textarea><br><br>
+                    <label style="color: #ffffff">Submission</label><textarea style="height: 164px" id = "submission-done" class = "form-control" readonly>{{ assignment.submission }}</textarea><p style="color: white; float: left;">Word Count: &nbsp;</p><p style="color: white; float: left;" id = "wordCount">0</p><br><br>
                     <a class = "btn btn-danger" href = "/homework/undone/{{ assignment.id }}">Return Assignment</a>
                 {% else %}
                     <form method="POST">
                         {% csrf_token %}
-                        <label style="color: #ffffff">Submission</label><textarea name = "submission" class = "form-control">{{ assignment.submission }}</textarea><br><br>
+                        <label style="color: #ffffff">Submission</label><textarea style="height: 164px" id = "submission-pend" onkeyup="update();" name = "submission" class = "form-control">{{ assignment.submission }}</textarea><p style="color: white; float: left;">Word Count: &nbsp;</p><p style="color: white; float: left;" id = "wordCount">0</p><br><br>
                         <button class = "btn btn-success" type = "submit">Submit Assignment</button>
                     </form>
                 {% endif %}
@@ -29,4 +29,21 @@
       </div>
     </section>
 
+{% endblock %}
+
+{% block static %}
+<script>
+    function update(){
+        {% if assignment.done %}
+            var textbox = document.getElementById("submission-done");
+        {% else %}
+            var textbox = document.getElementById("submission-pend");
+        {% endif %}
+        var text = (textbox.value).split(" ");
+        var count = document.getElementById("wordCount");
+        count.innerHTML = text.length;
+    }
+
+    update();
+</script>
 {% endblock %}

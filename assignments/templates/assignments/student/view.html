@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block main-content %}
-
     <!-- banner part start-->
     <section class="banner_part background_teal">
       <div class="container">
@@ -11,12 +10,12 @@
                 <center><h1>{{assignment.name}}</h1>
                         <p style = 'color: white;'>{{ assignment.description }}</p><br><br><br>
                     {% if assignment.done %}
-                        <label style="color: #ffffff">Submission</label><textarea class = "form-control" readonly>{{ assignment.submission }}</textarea><br><br>
+                        <label style="color: #ffffff">Submission</label><textarea style="height: 164px" id = "submission-done" class = "form-control" readonly>{{ assignment.submission }}</textarea><p style="color: white; float: left;">Word Count: &nbsp;</p><p style="color: white; float: left;" id = "wordCount">0</p><br><br>
                         <a class = "btn btn-danger" href = "/homework/undone/{{ assignment.id }}">Un-Submit Assignment</a>
                     {% elif assignment.linked_model_assignment %}
                         <form method="POST">
                             {% csrf_token %}
-                            <label style="color: #ffffff">Submission</label><textarea name = "submission" class = "form-control">{{ assignment.submission }}</textarea><br><br>
+                            <label style="color: #ffffff">Submission</label><textarea style="height: 164px" id = "submission-pend" onkeyup="update();" name = "submission" class = "form-control">{{ assignment.submission }}</textarea><p style="color: white; float: left;">Word Count: &nbsp;</p><p style="color: white; float: left;" id = "wordCount">0</p><br><br>
                             <button type="submit" name = "save_draft" class="btn btn-secondary">Save Draft</button>
                             <button class = "btn btn-success" type = "submit">Submit Assignment</button>
                         </form>
@@ -44,7 +43,23 @@
             </div>
           </div>
         </div>
-      </div>
+      </div><br><br>
     </section>
+{% endblock %}
 
+{% block static %}
+<script>
+    function update(){
+        {% if assignment.done %}
+            var textbox = document.getElementById("submission-done");
+        {% else %}
+            var textbox = document.getElementById("submission-pend");
+        {% endif %}
+        var text = (textbox.value).split(" ");
+        var count = document.getElementById("wordCount");
+        count.innerHTML = text.length;
+    }
+
+    update();
+</script>
 {% endblock %}

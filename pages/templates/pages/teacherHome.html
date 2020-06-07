@@ -7,7 +7,7 @@
       <div class="container">
         <br><br><br><br><br><center><h1 style = "color: white;">Welcome to the Homework Manager Teacher Portal</h1></center><br><br><br>
 
-        <h1 style = "color: white;">You have <span class="badge badge-secondary" style = "color: #00d089;">{{Classes}}</span> Classes.</h1><br><br>
+        <h1 style = "color: white;">You have <span class="badge badge-secondary" style = "color: #00d089;">{{Classes}}</span> Class{% if Classes > 1 or Classes == 0 %}es.{% else %}.{% endif %}</h1><br><br>
 
         <div class="row">
           <div class="col-sm-4">
