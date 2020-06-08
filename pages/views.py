@@ -74,74 +74,65 @@ def newUser(request, *args, type):
     print(request.user)
     return render(request, 'register.html', {})
 
-def decidehome(request, *args, **kwargs):
+def home(request, *args, **kwargs):
     if request.user.is_authenticated:
         profile = Profile.objects.get(user = request.user)
         if profile.teacher == True:
-            response = redirect('/teacher/home')
+            classes = Class.objects.all()
+            assignments = Assignment.objects.all()
+            AssignmentsA = 0
+            AssignmentsD = 0
+            Classes = 0
+
+            for classe in classes:
+                if classe.teacher == request.user:
+                    Classes += 1
+
+            context = {
+                'classes': classes,
+                'assignments': assignments,
+                'AssignmentsA': AssignmentsA,
+                'AssignmentsD': AssignmentsD,
+                'Classes': Classes
+            }
+
+            print(args, kwargs)
+            print(request.user)
+            return render(request, 'pages/teacherHome.html', context)
         elif profile.teacher == False:
-            response = redirect('/student/home')
+            classes = Class.objects.all()
+            assignments = Assignment.objects.all()
+            class_link = class_linker.objects.all()
+            AssignmentsA = 0
+            AssignmentsD = 0
+            Classes = 0
+
+            for link in class_link:
+                if link.linked_user == request.user:
+                    Classes += 1
+
+            for assignment in assignments:
+                if assignment.user == request.user and assignment.done:
+                    AssignmentsD += 1
+                elif assignment.user == request.user:
+                    AssignmentsA += 1
+
+            context = {
+                'classes': classes,
+                'assignments': assignments,
+                'AssignmentsA': AssignmentsA,
+                'AssignmentsD': AssignmentsD,
+                'Classes': Classes
+            }
+
+            print(args, kwargs)
+            print(request.user)
+            return render(request, 'pages/studentHome.html', context)
     else:
         response = redirect('/')
 
     return response
 
-@login_required
-def studentHome(request, *args, **kwargs):
-    classes = Class.objects.all()
-    assignments = Assignment.objects.all()
-    class_link = class_linker.objects.all()
-    AssignmentsA = 0
-    AssignmentsD = 0
-    Classes = 0
-
-    for link in class_link:
-        if link.linked_user == request.user:
-            Classes += 1
-
-    for assignment in assignments:
-        if assignment.user == request.user and assignment.done:
-            AssignmentsD += 1
-        elif assignment.user == request.user:
-            AssignmentsA += 1
-
-
-
-    context = {
-        'classes': classes,
-        'assignments': assignments,
-        'AssignmentsA': AssignmentsA,
-        'AssignmentsD': AssignmentsD,
-        'Classes': Classes
-    }
-
-    print(args, kwargs)
-    print(request.user)
-    return render(request, 'pages/studentHome.html', context)
-
-@login_required
-def teacherHome(request, *args, **kwargs):
-    classes = Class.objects.all()
-    assignments = Assignment.objects.all()
-    AssignmentsA = 0
-    AssignmentsD = 0
-    Classes = 0
-
-    for classe in classes:
-        if classe.teacher == request.user:
-            Classes += 1
-
-    context = {
-        'classes': classes,
-        'assignments': assignments,
-        'AssignmentsA': AssignmentsA,
-        'AssignmentsD': AssignmentsD,
-        'Classes': Classes
-    }
-
-    print(args, kwargs)
-    print(request.user)
-    return render(request, 'pages/teacherHome.html', context)
 
 @login_required()
 def logout_request(request):
@@ -149,7 +140,6 @@ def logout_request(request):
 
     response = redirect("/login")
     return response
-
 
 def denied(request, *args, **kwargs):
     return render(request, "pages/denied.html", {})
@@ -163,7 +153,7 @@ def update(request):
     message = ""
 
     if request.method == "POST":
-        message = subprocess.run(["git", "pull"], capture_output=True)
+        message = subprocess.run(["git", "pull"], stdout=subprocess.PIPE).stdout.decode('utf-8')
 
     context = {
         'message': message
