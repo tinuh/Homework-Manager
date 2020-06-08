@@ -9,7 +9,7 @@
             <div class="banner_text"><br><br><br><br><br>
                 <center><h1>{{assignment.name}}</h1>
                         <p style = 'color: white;'>{{ assignment.description }}</p><br><br><br>
-                    {% if assignment.done %}
+                    {% if assignment.done and assignment.linked_model_assignment %}
                         <label style="color: #ffffff">Submission</label><textarea style="height: 164px" id = "submission-done" class = "form-control" readonly>{{ assignment.submission }}</textarea><p style="color: white; float: left;">Word Count: &nbsp;</p><p style="color: white; float: left;" id = "wordCount">0</p><br><br>
                         <a class = "btn btn-danger" href = "/homework/undone/{{ assignment.id }}">Un-Submit Assignment</a>
                     {% elif assignment.linked_model_assignment %}
@@ -19,7 +19,7 @@
                             <button type="submit" name = "save_draft" class="btn btn-secondary">Save Draft</button>
                             <button class = "btn btn-success" type = "submit">Submit Assignment</button>
                         </form>
-                    {% else %}
+                    {% elif assignment.linked_class %}
                 </center>
                     <center><h1>Done <span class="badge badge-secondary">{{doneC}}</span></h1></center>
                     {% for student in done %}
@@ -39,6 +39,15 @@
                           </div>
                         </div>
                     {% endfor %}
+                {% else %}
+                    <center>
+                        {% if assignment.done %}
+                        <a class="btn btn-danger" href = "/homework/undone/{{ assignment.id }}">Mark as not Done</a><br><br>
+                        {% else %}
+                        <a class="btn btn-success" href = "/homework/done/{{ assignment.id }}">Mark as Done</a><br><br>
+                        {% endif %}
+                        <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete: {{ assignment.name }}');" href = "/homework/delete/{{ assignment.id }}">Delete</a>
+                    </center>
                 {% endif %}
             </div>
           </div>

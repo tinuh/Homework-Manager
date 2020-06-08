@@ -14,9 +14,11 @@
                     <div class="card-body">
                       <a>{{assignment.name}}</a>&nbsp;
                       <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a>
-                      <a href = "" type="button" data-toggle="modal" data-sub = "{{ assignment.submission }}" data-assignid = "{{ assignment.id }}" data-assigname = "{{assignment.name}}" data-target="#exampleModal" title = "Mark as Done" class = "btn btn-success">✓</a>
-                      {% if not assignment.linked_model_assignment %}
-                      <a href = "/homework/delete/{{assignment.id}}" title = "Delete" class = "btn btn-danger">✗</a>
+                      {% if assignment.linked_model_assignment %}
+                      <a href = "" type="button" data-toggle="modal" data-sub = "{{ assignment.submission }}" data-assignid = "{{ assignment.id }}" data-assigname = "{{assignment.name}}" data-target="#exampleModal" title = "Submit" class = "btn btn-success">✓</a>
+                      {% else %}
+                      <a href = "/homework/done/{{ assignment.id }}" type="button" title = "Mark as Done" class = "btn btn-success">✓</a>
+                      <a href = "/homework/delete/{{assignment.id}}" onclick="return confirm('Are you sure you want to delete: {{ assignment.name }}');" title = "Delete" class = "btn btn-danger">✗</a>
                       {% endif %}
                     </div>
                   </div>
@@ -32,7 +34,7 @@
                       <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a>
                       <a href = "/homework/undone/{{assignment.id}}" title = "Un-Submit" class = "btn btn-dark">-✓</a>
                       {% if not assignment.linked_model_assignment %}
-                      <a href = "/homework/delete/{{assignment.id}}" title = "Delete" class = "btn btn-danger">✗</a>
+                      <a href = "/homework/delete/{{assignment.id}}" onclick="return confirm('Are you sure you want to delete: {{ assignment.name }}');" title = "Delete" class = "btn btn-danger">✗</a>
                       {% endif %}
                     </div>
                   </div>
