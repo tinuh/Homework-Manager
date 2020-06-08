@@ -20,7 +20,7 @@ def view(request):
     return redirect(response)
 
 @login_required
-def studentClass(request, *args, **kwargs):
+def student(request, *args, **kwargs):
     assignments = Assignment.objects.all()
     class_link = class_linker.objects.filter(linked_user_id = request.user.id)
     classes = []
@@ -41,7 +41,7 @@ def studentClass(request, *args, **kwargs):
     return render(request, 'classes/student/index.html', context)
 
 @login_required
-def teacherClass(request, *args, **kwargs):
+def teacher(request, *args, **kwargs):
     if request.user.profile.teacher:
         assignments = Assignment.objects.all()
         class_link = class_linker.objects.all()
@@ -69,7 +69,7 @@ def teacherClass(request, *args, **kwargs):
         return response
 
 @login_required
-def teacherSpecificClass(request, *args, id):
+def teacher_view(request, *args, id):
     try:
         classe = Class.objects.get(pk=id)
     except:
@@ -115,7 +115,7 @@ def teacherSpecificClass(request, *args, id):
         return response
 
 @login_required
-def studentSpecificClass(request, *args, id):
+def student_view(request, *args, id):
 
     try:
         classe = Class.objects.get(pk=id)
@@ -145,7 +145,7 @@ def studentSpecificClass(request, *args, id):
         return response
 
 @login_required
-def class_add(request, *args, **kwargs):
+def add(request, *args, **kwargs):
 
     if request.user.profile.teacher:
 
@@ -187,7 +187,7 @@ def class_add(request, *args, **kwargs):
     return render(request, 'classes/teacher/add.html', context)
 
 @login_required
-def class_edit(request, *args, **kwargs):
+def edit(request, *args, **kwargs):
     id = kwargs['id']
 
     go = False
@@ -239,7 +239,7 @@ def delete(request, *args, id):
         return response
 
 @login_required
-def join_class(request, *args, **kwargs):
+def join(request, *args, **kwargs):
     if request.method == "POST":
         try:
             classe = Class.objects.get(code = str(request.POST.get('code')))

@@ -31,7 +31,7 @@ def add(request):
     return redirect(response)
 
 @login_required
-def assignmentsTeacher(request, *args, **kwargs):
+def teacher(request, *args, **kwargs):
     classes = Class.objects.all()
     assignments = Assignment.objects.all()
     model_assignments = Model_assignment.objects.all()
@@ -63,7 +63,7 @@ def assignmentsTeacher(request, *args, **kwargs):
 
 
 @login_required
-def assignmentsStudent(request, *args, **kwargs):
+def student(request, *args, **kwargs):
     classes = Class.objects.all()
 
     if request.method == "POST":
@@ -100,7 +100,7 @@ def assignmentsStudent(request, *args, **kwargs):
         return render(request, 'assignments/student/index.html', context)
 
 @login_required
-def assignmentStudent_add(request, *args, **kwargs):
+def student_add(request, *args, **kwargs):
     classes = Class.objects.all()
     assignments = Assignment.objects.all()
 
@@ -123,7 +123,7 @@ def assignmentStudent_add(request, *args, **kwargs):
     return render(request, 'assignments/student/add.html', context)
 
 @login_required
-def assignmentTeacher_add(request, *args, **kwargs):
+def teacher_add(request, *args, **kwargs):
     classes = Class.objects.all()
     assignments = Assignment.objects.all()
     classess = []
@@ -161,7 +161,7 @@ def assignmentTeacher_add(request, *args, **kwargs):
     return render(request, 'assignments/teacher/add.html', context)
 
 @login_required
-def deleteStudent(request, *args, id):
+def delete_student(request, *args, id):
 
     assignment = Assignment.objects.get(pk = id)
     assignment.delete()
@@ -224,7 +224,7 @@ def model_delete(request, *args, **kwargs):
         response = redirect('/denied')
         return response
 
-def studentAssignmentSpecific(request, *args, **kwargs):
+def student_view(request, *args, **kwargs):
     id = kwargs['id']
 
     try:
@@ -250,7 +250,7 @@ def studentAssignmentSpecific(request, *args, **kwargs):
             return redirect("/denied")
 
 
-def teacherAssignmentSpecific(request, *args, **kwargs):
+def teacher_view(request, *args, **kwargs):
     id = kwargs['id']
 
     try:
@@ -341,7 +341,7 @@ def teacher_edit(request, *args, **kwargs):
 
         return render(request, 'assignments/teacher/edit.html', context)
 
-def teacherAssignmentStudentSpecific(request, *args, **kwargs):
+def teacher_student_view(request, *args, **kwargs):
     id = kwargs['id']
 
     try:
