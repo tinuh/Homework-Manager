@@ -11,9 +11,9 @@
                 {% for class in classes %}
                 <div class="card class-card">
                   <div class="card-body">
-                    <a>{{class.name}}</a>&nbsp;
+                    <h3 style="display: inline">{{class.name}}
                     <a href = "/class/student/view/{{class.id}}" title = "View" class = "btn btn-primary">👁</a>
-                    <a href = "/class/remove/student/{{class.id}}/{{request.user.id}}" title = "Un-Enroll" onclick=" return window.confirm('Are you sure you want to Un-enroll?');" class = "btn btn-danger">✗</a>
+                    <a href = "/class/remove/student/{{class.id}}/{{request.user.id}}" title = "Un-Enroll" onclick=" return window.confirm('Are you sure you want to Un-enroll?');" class = "btn btn-danger">✗</a></h3>
                   </div>
                 </div>
                 {% endfor %}

@@ -19,8 +19,8 @@
                 {% for assignment in assignments %}
                 <div class="card class-card">
                   <div class="card-body">
-                    <a>{{assignment.name}}</a>
-                    <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a>
+                    <h3 style="display: inline">{{assignment.name}}
+                    <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a></h3>
                   </div>
                 </div>
               {% endfor %}

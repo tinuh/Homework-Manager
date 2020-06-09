@@ -61,8 +61,8 @@
                 {% for student in students %}
                 <div class="card class-card">
                   <div class="card-body">
-                    <a>{{student.first_name}}</a>&nbsp;
-                    <a href = "/class/remove/student/{{class.id}}/{{student.id}}" title = "Delete" onclick=" return window.confirm('Are you sure you want to remove {{student.first_name}}');" class = "btn btn-danger">✗</a>
+                      <h3 style="display: inline"><a>{{student.first_name}}</a>&nbsp;
+                    <a href = "/class/remove/student/{{class.id}}/{{student.id}}" title = "Delete" onclick=" return window.confirm('Are you sure you want to remove {{student.first_name}}');" class = "btn btn-danger">✗</a></h3>
                   </div>
                 </div>
                 {% endfor %}
@@ -71,10 +71,11 @@
               {% for assignment in assignments %}
               <div class="card class-card">
                 <div class="card-body">
-                  <center><h3>{{assignment.0.name}} ( <span class="badge badge-secondary" style = 'color: #00d089;'>{{assignment.1.0}}</span> Done, <span class="badge badge-secondary" style = 'color: #00d089;'>{{assignment.1.1}}</span> Assigned)
+                    <h3 style="display:inline;">{{assignment.0.name}} <a id="date">( <span class="badge badge-secondary" style = 'color: #00d089;'>{{assignment.1.0}}</span> Done, <span class="badge badge-secondary" style = 'color: #00d089;'>{{assignment.1.1}}</span> Assigned)</a>
                     <a href = "/homework/teacher/view/{{ assignment.0.id }}" title = "View" class = "btn btn-primary">👁</a>
                     <a href = "/homework/teacher/edit/{{ assignment.0.id }}" title = "Edit" class = "btn btn-secondary">✎</a>
-                    <a href = "/homework/model/delete/{{assignment.0.id}}/1" title = "Delete" onclick=" return window.confirm('Are you sure you want to delete the assignment: {{assignment.0.name}}');" class = "btn btn-danger">✗</a></h3></center>
+                    <a href = "/homework/model/delete/{{assignment.0.id}}/1" title = "Delete" onclick=" return window.confirm('Are you sure you want to delete the assignment: {{assignment.0.name}}');" class = "btn btn-danger">✗</a></h3>
+                    <a id = "date" style="float: right">Due: {% if assignment.due_date == time %}Today{% else %}{{ assignment.due_date }}{% endif %}</a>
                 </div>
               </div>
               {% endfor %}

@@ -6,6 +6,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from profiles.models import Profile
 from .models import Model_assignment
+from django.utils import timezone
 
 # Create your views here.
 @login_required
@@ -93,6 +94,7 @@ def student(request, *args, **kwargs):
             'assignments': assignments,
             'AssignmentsA': AssignmentsA,
             'AssignmentsD': AssignmentsD,
+            'time': timezone.localtime(timezone.now()).date(),
         }
 
         print(args, kwargs)
@@ -114,6 +116,7 @@ def student_add(request, *args, **kwargs):
         assignments.name = request.POST.get('name')
         assignments.description = request.POST.get('description')
         assignments.user_id = request.user.id
+        assignments.due_date = request.POST.get('due_date')
         assignments.save()
 
         response = redirect('/homework/view')
@@ -142,7 +145,7 @@ def teacher_add(request, *args, **kwargs):
         class_link = class_linker.objects.all()
         model_assiginments = Model_assignment.objects.all()
         try:
-            model_assiginment = Model_assignment(name = request.POST.get('name'),description = request.POST.get('description') ,linked_teacher_id = request.user.id, linked_class_id = request.POST.get('class'))
+            model_assiginment = Model_assignment(name = request.POST.get('name'),description = request.POST.get('description') ,linked_teacher_id = request.user.id, linked_class_id = request.POST.get('class'), due_date=request.POST.get('due_date'))
             class_object = Class.objects.get(id=int(str(request.POST.get('class')))).id
             model_assiginment.save()
         except:
@@ -150,7 +153,7 @@ def teacher_add(request, *args, **kwargs):
 
         for student in class_link:
             if str(student.enrolled_class.id) == str(request.POST.get('class')):
-                assignments = Assignment(name = request.POST.get('name'), description = request.POST.get('description'), linked_class_id = request.POST.get('class'), user_id = student.linked_user.id, linked_model_assignment_id = int(model_assiginment.id), linked_class_linker_id = int(student.id))
+                assignments = Assignment(name = request.POST.get('name'), description = request.POST.get('description'), linked_class_id = request.POST.get('class'), user_id = student.linked_user.id, linked_model_assignment_id = int(model_assiginment.id), linked_class_linker_id = int(student.id), due_date=request.POST.get('due_date'))
                 assignments.save()
 
 
@@ -309,6 +312,8 @@ def teacher_edit(request, *args, **kwargs):
         assignment.linked_class_id = classe = request.POST.get('class')
         assignment.name = name = request.POST.get('name')
         assignment.description = request.POST.get('description')
+        assignment.due_date = request.POST.get('due_date')
+        print(request.POST.get('due_date'))
         assignment.save()
         assignment = Model_assignment.objects.get(pk=id)
 
@@ -318,6 +323,7 @@ def teacher_edit(request, *args, **kwargs):
             for assign in linked_assignments:
                 assign.name = assignment.name
                 assign.description = assignment.description
+                assign.due_date = assignment.due_date
                 assign.save()
         else:
             for assign in linked_assignments:
@@ -332,6 +338,7 @@ def teacher_edit(request, *args, **kwargs):
                 assign.linked_class_id = person.enrolled_class.id
                 assign.linked_class_linker_id = person.id
                 assign.linked_model_assignment_id = assignment.id
+                assign.due_date = assignment.due_date
                 assign.save()
         
         return redirect("/homework/teacher/view/" + str(assignment.id))

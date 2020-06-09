@@ -8,8 +8,9 @@
         <div class="row align-items-center">
           <div class="col-lg-12">
             <div class="banner_text"><br><br><br><br><br>
-                <center><h1>{{assignment.name}}</h1>
+                <center><h1 style="display: inline">{{assignment.name}}</h1><br><br>
                 <h3 style="color: #ffffff">({{ assignment.user.first_name }})</h3>
+                <h3 style="color: white">Due: {{ assignment.due_date }}</h3>
                 <p style = 'color: white;'>{{ assignment.description }}</p><br><br><br>
 
                 {% if assignment.done %}

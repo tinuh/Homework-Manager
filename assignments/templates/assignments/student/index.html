@@ -12,13 +12,15 @@
                   {% if assignment.done == False %}
                   <div class="card class-card">
                     <div class="card-body">
-                      <a>{{assignment.name}}</a>&nbsp;
+                      <h3 style="display: inline" {% if assignment.due_date >= time %}>{% else %}style="color: red">{% endif %}{{assignment.name}}</h3>&nbsp
                       <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a>
                       {% if assignment.linked_model_assignment %}
                       <a href = "" type="button" data-toggle="modal" data-sub = "{{ assignment.submission }}" data-assignid = "{{ assignment.id }}" data-assigname = "{{assignment.name}}" data-target="#exampleModal" title = "Submit" class = "btn btn-success">✓</a>
+                      {% if assignment.due_date > time %}<a id = "date" style="float: right;">{% else %}<a id = "date" style="color: red; float: right;">{% endif %}Due: {% if assignment.due_date == time %}Today{% else %}{{ assignment.due_date }}{% endif %}</a>
                       {% else %}
                       <a href = "/homework/done/{{ assignment.id }}" type="button" title = "Mark as Done" class = "btn btn-success">✓</a>
                       <a href = "/homework/delete/{{assignment.id}}" onclick="return confirm('Are you sure you want to delete: {{ assignment.name }}');" title = "Delete" class = "btn btn-danger">✗</a>
+                      {% if assignment.due_date > time %}<a id = "date" style="float: right;">{% else %}<a id = "date" style="color: red; float: right;">{% endif %}Due: {% if assignment.due_date == time %}Today{% else %}{{ assignment.due_date }}{% endif %}</a>
                       {% endif %}
                     </div>
                   </div>
@@ -30,9 +32,10 @@
                   {% if assignment.done == True %}
                   <div class="card class-card">
                     <div class="card-body">
-                      <a>{{assignment.name}}</a>&nbsp;
+                      <h3 style="display: inline">{{assignment.name}}</h3>&nbsp;
                       <a href = "/homework/student/view/{{ assignment.id }}" title = "View" class = "btn btn-primary">👁</a>
                       <a href = "/homework/undone/{{assignment.id}}" title = "Un-Submit" class = "btn btn-dark">-✓</a>
+                      <a id = "date" style="float: right">Due: {% if assignment.due_date == time %}Today{% else %}{{ assignment.due_date }}{% endif %}</a>
                       {% if not assignment.linked_model_assignment %}
                       <a href = "/homework/delete/{{assignment.id}}" onclick="return confirm('Are you sure you want to delete: {{ assignment.name }}');" title = "Delete" class = "btn btn-danger">✗</a>
                       {% endif %}

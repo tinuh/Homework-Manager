@@ -11,10 +11,10 @@
                 {% for class in classes %}
                 <div class="card class-card">
                   <div class="card-body">
-                    <a>{{class.name}}</a>&nbsp;
+                    <h3 style="display: inline">{{class.name}}
                     <a href = "/class/teacher/view/{{class.id}}" title = "View" class = "btn btn-primary">👁</a>
                     <a href = "/class/edit/{{ class.id }}" title = "Edit" class = "btn btn-secondary">✎</a>
-                    <a href = "/class/delete/{{class.id}}" title = "Delete" onclick="return window.confirm('Are you sure you want to delete the class: {{class.name}}')" class = "btn btn-danger">✗</a>
+                    <a href = "/class/delete/{{class.id}}" title = "Delete" onclick="return window.confirm('Are you sure you want to delete the class: {{class.name}}')" class = "btn btn-danger">✗</a></h3>&nbsp;
                   </div>
                 </div>
                 {% endfor %}
