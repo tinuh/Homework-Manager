@@ -100,6 +100,25 @@
                       <a class="dropdown-item" href="/homework/view">View Homework</a>
                     </div>
                   </li>
+                    {% if request.user.is_superuser %}
+                      <li class="nav-item dropdown">
+                    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+                    <a
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Admin Tools
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/update">Update Tool</a>
+                      <a class="dropdown-item" href="/passwords/add">Password Reset Request</a>
+                    </div>
+                  </li>
+                  {% endif %}
                   <li class="nav-item dropdown">
                     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
                     <a
