@@ -31,10 +31,10 @@ def add(request):
 
         #send email
         msg = "Dear Homework Manager User, \n\n" \
-              "     A New password reset request has been placed for the user: " + reset_request.user.username + ". Reset it at the link https://homework.tinu.tech/passwords/reset/" + reset_request.code + " \n \n Thank you for using the Homework Manager."
+              "     A New password reset request has been placed for the user: " + reset_request.user.username + ". Reset it at the link https://homework.tinu.tech/passwords/reset/" + reset_request.code + " \n \nThank you for using the Homework Manager \nNote: This is an automated email."
 
         server.sendmail(env("EMAIL"), reset_request.email, "\r\n".join(
-            ["From: Homework Manager <" + env("EMAIL") + ">", "To: " + reset_request.email, "Subject: Password Reset Request (Homework Manager)", "", msg]))
+            ["From: Homework Manager <" + env("EMAIL") + ">", "To: " + reset_request.email, "Subject: Password Reset Request", "", msg]))
 
         #Stop the SMTP Server
         server.quit()
