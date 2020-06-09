@@ -35,20 +35,19 @@ def add(request):
 def teacher(request, *args, **kwargs):
     classes = Class.objects.all()
     assignments = Assignment.objects.all()
-    model_assignments = Model_assignment.objects.all()
+    model_assignments = Model_assignment.objects.filter(linked_teacher_id=request.user.id).order_by('due_date')
     assignmentNames = []
     count = -1
 
     for model_assignment in model_assignments:
-        if model_assignment.linked_teacher == request.user:
-            count += 1
-            assignmentNames.append([model_assignment, [0, 0]])
-            for assignment in assignments:
-                if assignment.linked_model_assignment == model_assignment:
-                    if assignment.done == True:
-                        assignmentNames[count][1][0] += 1
-                    else:
-                        assignmentNames[count][1][1] += 1
+        count += 1
+        assignmentNames.append([model_assignment, [0, 0]])
+        for assignment in assignments:
+            if assignment.linked_model_assignment == model_assignment:
+                if assignment.done == True:
+                    assignmentNames[count][1][0] += 1
+                else:
+                    assignmentNames[count][1][1] += 1
 
     assignmentCount = len(assignmentNames)
 
@@ -56,6 +55,7 @@ def teacher(request, *args, **kwargs):
         'classes': classes,
         'assignmentNames': assignmentNames,
         'assignmentCount': assignmentCount,
+        'time': timezone.localtime(timezone.now()).date(),
     }
 
     print(args, kwargs)
@@ -76,7 +76,7 @@ def student(request, *args, **kwargs):
 
         return redirect("/homework/student/view/" + str(assignment.id))
     else:
-        assignments = Assignment.objects.filter(user_id=request.user.id)
+        assignments = Assignment.objects.filter(user_id=request.user.id).order_by('due_date')
         AssignmentsA = 0
         AssignmentsD = 0
 
@@ -347,6 +347,32 @@ def teacher_edit(request, *args, **kwargs):
             return redirect('/denied')
 
         return render(request, 'assignments/teacher/edit.html', context)
+
+
+def student_edit(request, *args, **kwargs):
+    id = kwargs["id"]
+
+    if request.method != "POST":
+        try:
+            assignment = Assignment.objects.get(pk=id)
+        except:
+            return redirect('/denied')
+    else:
+        assignment = Assignment.objects.get(pk=id)
+
+    context = {
+        'assignment': assignment,
+    }
+
+    if request.method == "POST":
+        assignment.name = name = request.POST.get('name')
+        assignment.description = request.POST.get('description')
+        assignment.due_date = request.POST.get('due_date')
+        assignment.save()
+
+        return redirect("/homework/student/view/" + str(assignment.id))
+    else:
+        return render(request, 'assignments/student/edit.html', context)
 
 def teacher_student_view(request, *args, **kwargs):
     id = kwargs['id']

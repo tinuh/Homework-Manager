@@ -75,7 +75,7 @@
                     <a href = "/homework/teacher/view/{{ assignment.0.id }}" title = "View" class = "btn btn-primary">👁</a>
                     <a href = "/homework/teacher/edit/{{ assignment.0.id }}" title = "Edit" class = "btn btn-secondary">✎</a>
                     <a href = "/homework/model/delete/{{assignment.0.id}}/1" title = "Delete" onclick=" return window.confirm('Are you sure you want to delete the assignment: {{assignment.0.name}}');" class = "btn btn-danger">✗</a></h3>
-                    <a id = "date" style="float: right">Due: {% if assignment.due_date == time %}Today{% else %}{{ assignment.due_date }}{% endif %}</a>
+                    <a id = "date" style="float: right">Due: {% if assignment.0.due_date == time %}Today{% else %}{{ assignment.0.due_date }}{% endif %}</a>
                 </div>
               </div>
               {% endfor %}

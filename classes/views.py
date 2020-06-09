@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from profiles.models import Profile
 import random
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 # Create your views here.
 
@@ -106,6 +107,7 @@ def teacher_view(request, *args, id):
             'class': classe,
             'students': students,
             'studentsA': len(students),
+            'time': timezone.localtime(timezone.now()).date(),
         }
 
         return render(request, 'classes/teacher/view.html', context)
@@ -136,6 +138,7 @@ def student_view(request, *args, id):
             'class': classe,
             'assignments': assignments,
             'assignmentsA': assignmentsA,
+            'time': timezone.localtime(timezone.now()).date(),
         }
 
         return render(request, 'classes/student/view.html', context)
