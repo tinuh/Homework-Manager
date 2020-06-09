@@ -31,7 +31,7 @@ def add(request):
 
         #send email
         msg = "Dear Homework Manager User, \n\n" \
-              "     A New password reset request has been placed for the user: " + reset_request.user.username + ". Reset it at the link https://homework.tinu.tech/passwords/reset/" + reset_request.code + ". \n \n Thank you for using the Homework Manager."
+              "     A New password reset request has been placed for the user: " + reset_request.user.username + ". Reset it at the link https://homework.tinu.tech/passwords/reset/" + reset_request.code + " \n \n Thank you for using the Homework Manager."
 
         server.sendmail(env("EMAIL"), reset_request.email, "\r\n".join(
             ["From: " + env("EMAIL"), "To: " + reset_request.email, "Subject: Password Reset Request (Homework Manager)", "", msg]))
