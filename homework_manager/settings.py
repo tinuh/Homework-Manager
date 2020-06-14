@@ -146,11 +146,7 @@ SECURE_HSTS_SECONDS = env("HSTS")
 
 #Static File config
 STATIC_URL = '/static/'
-if env("DEBUG"):
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 
 #Django Session Timeount Configuration
 SESSION_EXPIRE_SECONDS = 3600  # 600 seconds = 5 minutes
