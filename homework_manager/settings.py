@@ -144,12 +144,10 @@ SECURE_HSTS_SECONDS = env("HSTS")
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+#Static File config
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-
+#Django Session Timeount Configuration
 SESSION_EXPIRE_SECONDS = 3600  # 600 seconds = 5 minutes
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
