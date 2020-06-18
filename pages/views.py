@@ -77,13 +77,19 @@ def newUser(request, *args, **kwargs):
         return response
     print(args)
     print(request.user)
-    try:
-        Profile.objects.get(user_id=request.user.id)
-    except:
-        if request.user.is_authenticated:
+    print(request.user.is_authenticated)
+    if request.user.is_authenticated:
+        try:
+            kwargs['type']
+        except:
+            pass
+        else:
             type = kwargs['type']
             if type == "teacher":
                 request.user.profile.teacher = True
+                request.user.profile.save()
+            else:
+                request.user.profile.teacher = False
                 request.user.profile.save()
             return redirect("/home")
     return render(request, 'register.html', {})
