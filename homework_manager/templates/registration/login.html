@@ -1,3 +1,5 @@
+{% load socialaccount %}
+
 <!DOCTYPE html>
 <html>
 
@@ -10,10 +12,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="/static/login/js/scripts.js"></script>
+	<script src="/static/login/js/main.js"></script>
 	<link rel='stylesheet' href="home.scss" type='text/scss' />
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  	<link rel='stylesheet' href="/static/css/home.css" type='text/css' />
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="/static/login/vendor/bootstrap/css/bootstrap.min.css">
   <!--===============================================================================================-->
@@ -39,7 +39,7 @@
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
-    <form method="POST" class="login100-form validate-form">
+    <form method="POST" class="login100-form validate-form" action = "/accounts/django/login/">
         {% csrf_token %}
 
         <span class="login100-form-title p-b-43">Log in
@@ -71,9 +71,14 @@
 		<div class="text-center p-t-46 p-b-20">
 			<span class="txt2">
 				Are you a new member <a href = "/new">Sign Up</a><br>
-				Forgot Password Contact <a href = "mailto:homework.manager@tinu.tech">homework.manager@tinu.tech</a>
+				Forgot Password Contact <a href = "mailto:homework.manager@tinu.tech">homework.manager@tinu.tech</a><br><br>
+                --Or Sign in with--
 			</span>
 		</div>
+
+        <div class="container-login100-form-btn">
+          <a href="{% provider_login_url 'google' %}" class="btn btn-light btn-block"><img style="height: 40px;" src = "/static/images/google-icon.svg"></a>
+        </div>
 
     </form>
     <div class="login100-more" style="background-image: url('/static/login/images/homework.jpg');">

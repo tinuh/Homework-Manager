@@ -27,7 +27,7 @@ def site_map(request):
 def new(request, *args, **kwargs):
     return render(request, 'pages/typeOfUser.html', {})
 
-def newUser(request, *args, type):
+def newUser(request, *args, **kwargs):
     if request.method == 'POST':
         message = []
         if request.POST.get('password') != request.POST.get('ConformPassword'):
@@ -52,7 +52,19 @@ def newUser(request, *args, type):
             return render(request, 'register.html', {'message': message})
 
         user = User()
-        user.first_name = request.POST.get('fullName')
+        name = request.POST.get('fullName')
+        name = name.split()
+        first_name = name[0]
+        user.first_name = first_name
+        try:
+            last_name = name[1:]
+            final = ""
+            for i in last_name:
+                final += i
+            user.last_name = final
+        except:
+            pass
+        user.email = request.POST.get('email')
         user.username = request.POST.get('username')
         user.set_password(request.POST.get('password'))
         user.save()
@@ -61,22 +73,27 @@ def newUser(request, *args, type):
 
         login(request, user)
 
-        profile = Profile()
-        profile.user_id = request.user.id
-        if type == "teacher":
-            profile.teacher = True
-        profile.save()
-
         response = redirect('/home')
         return response
-
     print(args)
     print(request.user)
+    try:
+        Profile.objects.get(user_id=request.user.id)
+    except:
+        if request.user.is_authenticated:
+            type = kwargs['type']
+            if type == "teacher":
+                request.user.profile.teacher = True
+                request.user.profile.save()
+            return redirect("/home")
     return render(request, 'register.html', {})
 
 def home(request, *args, **kwargs):
     if request.user.is_authenticated:
-        profile = Profile.objects.get(user = request.user)
+        try:
+            profile = Profile.objects.get(user = request.user)
+        except:
+            return redirect("/profile/add")
         if profile.teacher == True:
             classes = Class.objects.all()
             assignments = Assignment.objects.all()

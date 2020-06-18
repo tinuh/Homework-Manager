@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from .models import Profile
 # Create your views here.
 
 @login_required
@@ -11,7 +12,9 @@ def edit(request, *args, **kwargs):
     if request.method == 'POST':
         message = []
         if len(request.POST.get('firstname')) > 30:
-            message.append("The Name must by less than 30 Digits!")
+            message.append("The First Name must by less than 30 Digits!")
+        if len(request.POST.get('lastname')) > 30:
+            message.append("The Last Name must by less than 30 Digits!")
 
         if request.user.username != request.POST.get('username'):
             try:
@@ -28,10 +31,14 @@ def edit(request, *args, **kwargs):
 
 
         first_name =  request.POST.get('firstname')
+        last_name =  request.POST.get('lastname')
         username = request.POST.get('username')
+        email = request.POST.get('email')
         user = User.objects.get(pk = request.user.id)
         user.first_name = first_name
+        user.last_name = last_name
         user.username = username
+        user.email = email
         user.save()
 
         response = redirect('/home')
@@ -78,5 +85,20 @@ def change_password(request):
             response = redirect("/home")
             return response
 
+    if request.user.has_usable_password():
+        return render(request, "profiles/change_password.html", context)
+    else:
+        return render(request, "profiles/change_password_2.html", context)
 
-    return render(request, "profiles/change_password.html", context)
+def add(request, *args, **kwargs):
+    id = request.user.id
+
+    try:
+        Profile.objects.get(user_id=id)
+    except:
+        profile = Profile()
+        profile.user_id = id
+        profile.save()
+        return redirect("/set/type")
+    
+    return redirect("/home")

@@ -48,12 +48,22 @@
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Please enter a valid name">
-					<input class="input100" id="firstname" type="text" name="firstname" placeholder="Full Name" value = "{{user.first_name}}" data-bv-field="firstname" minlength="3" required>
+					<input class="input100" id="firstname" type="text" name="firstname" placeholder="First Name" value = "{{user.first_name}}" data-bv-field="firstname" minlength="3" required>
+				    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Please enter a valid name">
+					<input class="input100" id="firstname" type="text" name="lastname" placeholder="Last Name" value = "{{user.last_name}}" data-bv-field="firstname" minlength="3" required>
 				    <span class="focus-input100"></span>
                 </div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Please enter a valid username">
 					<input class="input100" id = 'username' type="text" name="username" placeholder="Username" value = "{{user.username}}" data-bv-field="username" minlength="3" required>
+				    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Please enter a valid username">
+					<input class="input100" id = 'email' type="email" name="email" placeholder="Username" value = "{{user.email}}" data-bv-field="username" minlength="3" required>
 				    <span class="focus-input100"></span>
                 </div>
 

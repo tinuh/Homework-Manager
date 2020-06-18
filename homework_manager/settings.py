@@ -35,15 +35,23 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
+    #Django Default
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     #Third Party apps
     'sslserver',
+
+    #django-allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 
     #Project apps
     'classes',
@@ -84,7 +92,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'homework_manager.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -95,7 +102,7 @@ WSGI_APPLICATION = 'homework_manager.wsgi.application'
 #     }
 #}
 
-
+#Postgres database besdie sqlite
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -149,5 +156,26 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 
 #Django Session Timeount Configuration
-SESSION_EXPIRE_SECONDS = 3600  # 600 seconds = 5 minutes
+SESSION_EXPIRE_SECONDS = 604800  # 600 seconds = 5 minutes #set to 1 day
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+
+#Add django-allauth to the Authenctication backends
+AUTHENTICATION_BACKENDS = (
+ 'django.contrib.auth.backends.ModelBackend',
+ 'allauth.account.auth_backends.AuthenticationBackend',
+ )
+
+SITE_ID = 2
+LOGIN_REDIRECT_URL = '/home'
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}

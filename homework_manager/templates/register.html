@@ -1,8 +1,10 @@
+{% load socialaccount %}
+
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Login - The Homework Manager</title>
+  <title>Register - The Homework Manager</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
@@ -10,10 +12,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="/static/login/js/scripts.js"></script>
+	<script src="/static/login/js/main.js"></script>
 	<link rel='stylesheet' href="home.scss" type='text/scss' />
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  	<link rel='stylesheet' href="/static/css/home.css" type='text/css' />
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="/static/login/vendor/bootstrap/css/bootstrap.min.css">
   <!--===============================================================================================-->
@@ -63,6 +63,12 @@
 			<span class="label-input100">Username</span>
 		</div>
 
+        <div class="wrap-input100 validate-input" data-validate = "Valid Email must be entered">
+			<input class="input100" type="email" name="email">
+			<span class="focus-input100"></span>
+			<span class="label-input100">Email</span>
+		</div>
+
 		<div class="wrap-input100 validate-input" data-validate="Password is required">
 			<input class="input100" type="password" name="password">
 			<span class="focus-input100"></span>
@@ -80,8 +86,13 @@
 		</div>
 
 		<div class="text-center p-t-46 p-b-20">
-			<span class="txt2"> Are you a existing member <a href = "/login">Log in</a></span>
+			<span class="txt2"> Are you a existing member <a href = "/login">Log in</a><br><br>
+            --Or Sign up with--</span>
 		</div>
+
+        <div class="container-login100-form-btn">
+          <a href="{% provider_login_url 'google' %}" class="btn btn-light btn-block"><img style="height: 40px;" src = "/static/images/google-icon.svg"></a>
+        </div>
 
     </form>
     <div class="login100-more" style="background-image: url('/static/login/images/homework.jpg');">
@@ -90,8 +101,6 @@
 </div>
 </div>
 </body>
-
-
 
 <!--===============================================================================================-->
 	<script src="/static/login/vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -109,6 +118,4 @@
 	<script src="/static/login/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="/static/login/js/main.js"></script>
-
-
 </html>
