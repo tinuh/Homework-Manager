@@ -42,8 +42,11 @@
     <form method="POST" class="login100-form validate-form" action = "/accounts/django/login/">
         {% csrf_token %}
 
-        <span class="login100-form-title p-b-43">Log in
-        </span>
+        <span class="login100-form-title p-b-43">Log in</span>
+        <div class="container-login100-form-btn">
+          <a title = "Log in with Google" href="{% provider_login_url 'google' %}" class="btn btn-light btn-block"><img style="height: 40px;" src = "/static/images/google-icon.svg"></a>
+        </div>
+        <hr>
         {% if form.errors %}
           <div class="alert alert-danger">
             <a class="close" href="#" data-dismiss="alert">×</a>
@@ -71,14 +74,9 @@
 		<div class="text-center p-t-46 p-b-20">
 			<span class="txt2">
 				Are you a new member <a href = "/new">Sign Up</a><br>
-				Forgot Password Contact <a href = "mailto:homework.manager@tinu.tech">homework.manager@tinu.tech</a><br><br>
-                --Or Sign in with--
+				Forgot Password Contact <a href = "mailto:homework.manager@tinu.tech">homework.manager@tinu.tech</a>
 			</span>
 		</div>
-
-        <div class="container-login100-form-btn">
-          <a href="{% provider_login_url 'google' %}" class="btn btn-light btn-block"><img style="height: 40px;" src = "/static/images/google-icon.svg"></a>
-        </div>
 
     </form>
     <div class="login100-more" style="background-image: url('/static/login/images/homework.jpg');">

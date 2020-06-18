@@ -42,6 +42,11 @@
     <form method="POST" class="login100-form validate-form" name = "signUp">
         {% csrf_token %}
         <span class="login100-form-title p-b-43"> Sign up </span>
+
+        <div class="container-login100-form-btn">
+          <a title = "Sign up with Google" href="{% provider_login_url 'google' %}" class="btn btn-light btn-block"><img style="height: 40px;" src = "/static/images/google-icon.svg"></a>
+        </div><hr>
+
         {% if message %}
           {% for i in message %}
           <div class="alert alert-danger">
@@ -86,13 +91,8 @@
 		</div>
 
 		<div class="text-center p-t-46 p-b-20">
-			<span class="txt2"> Are you a existing member <a href = "/login">Log in</a><br><br>
-            --Or Sign up with--</span>
+			<span class="txt2"> Are you a existing member <a href = "/login">Log in</a>
 		</div>
-
-        <div class="container-login100-form-btn">
-          <a href="{% provider_login_url 'google' %}" class="btn btn-light btn-block"><img style="height: 40px;" src = "/static/images/google-icon.svg"></a>
-        </div>
 
     </form>
     <div class="login100-more" style="background-image: url('/static/login/images/homework.jpg');">

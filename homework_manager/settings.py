@@ -156,7 +156,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 
 #Django Session Timeount Configuration
-SESSION_EXPIRE_SECONDS = 604800  # 600 seconds = 5 minutes #set to 1 day
+SESSION_EXPIRE_SECONDS = 4233600  # 600 seconds = 5 minutes #set to 1 week
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
 
 #Add django-allauth to the Authenctication backends
