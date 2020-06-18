@@ -130,7 +130,13 @@
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      <i class='fas'>&#xf007;</i> {{request.user.first_name}} {{ request.user.last_name }}
+                      <i class='fas'>
+                          {% if user.socialaccount_set.all.0.get_avatar_url%}
+                          <img style="height: 25px;border-radius: 50%;margin-right: 2px" src = "{{user.socialaccount_set.all.0.get_avatar_url}}">
+                          {% else %}
+                          &#xf007;
+                          {% endif %}
+                      </i> {{request.user.first_name}} {{ request.user.last_name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="/profile/edit">Edit Profile</a>
