@@ -152,7 +152,7 @@ SECURE_HSTS_SECONDS = env("HSTS")
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 #Define Login page
-LOGIN_URL='/login'
+LOGIN_URL = '/login'
 
 #Static File config
 STATIC_URL = '/static/'
