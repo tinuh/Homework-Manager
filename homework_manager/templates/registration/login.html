@@ -44,9 +44,8 @@
 
         <span class="login100-form-title p-b-43">Log in</span>
         <div class="container-login100-form-btn">
-          <a title = "Log in with Google" href="{% provider_login_url 'google' %}" class="btn btn-light btn-block"><img style="height: 40px;" src = "/static/images/google-icon.svg"></a>
-        </div>
-        <hr>
+            <a title = "Log in with Google" href="{% provider_login_url 'google' %}" class="btn btn-light btn-block" style="border-color: #0b0b0b;"><img style="height: 40px;" align="left" src = "/static/images/google-icon.svg"><center style="margin-top: 10px;margin-right: 20px">Log in with Google</center></a>
+        </div><hr>
         {% if form.errors %}
           <div class="alert alert-danger">
             <a class="close" href="#" data-dismiss="alert">×</a>
