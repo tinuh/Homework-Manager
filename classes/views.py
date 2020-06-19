@@ -10,8 +10,6 @@ import random
 from django.contrib.auth.models import User
 from django.utils import timezone
 
-# Create your views here.
-
 @login_required
 def view(request):
     if request.user.profile.teacher:

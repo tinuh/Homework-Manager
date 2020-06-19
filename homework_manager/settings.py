@@ -151,6 +151,9 @@ SECURE_HSTS_SECONDS = env("HSTS")
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+#Define Login page
+LOGIN_URL='/login'
+
 #Static File config
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
