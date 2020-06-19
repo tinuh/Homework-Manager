@@ -11,12 +11,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-#if you forked this repository create a env.py file and add enviroment variables
 from .env import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -29,11 +27,10 @@ DEBUG = env("DEBUG")
 if env("DEBUG"):
     ALLOWED_HOSTS = ["localhost"]
 else:
-    ALLOWED_HOSTS = ['homework.tinu.tech', "192.168.1.3"]
+    ALLOWED_HOSTS = ['homework.tinu.tech']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     #Django Default
     'django.contrib.admin',
@@ -95,14 +92,17 @@ WSGI_APPLICATION = 'homework_manager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-#DATABASE = {
-#    'default':{
-#        "ENGINE": 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-#}
+# Old database settings for sqlite
+""" 
+DATABASE = {
+    'default':{
+        "ENGINE": 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+     }
+}
+"""
 
-#Postgres database besdie sqlite
+#New database settings for postgres
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
