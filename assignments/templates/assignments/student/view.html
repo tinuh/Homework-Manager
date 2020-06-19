@@ -26,7 +26,7 @@
                     {% for student in done %}
                         <div class="card class-card">
                           <div class="card-body">
-                            <h3 style="display: inline">{{student.user.first_name}}
+                            <h3 style="display: inline">{{student.user.first_name}} {{student.user.last_name}}
                             <a href = "/homework/teacher/student/view/{{ student.id }}" title = "View" class = "btn btn-primary">👁</a></h3>
                           </div>
                         </div>
@@ -35,7 +35,7 @@
                     {% for student in notdone %}
                         <div class="card class-card">
                           <div class="card-body">
-                            <h3 style="display: inline">{{student.user.first_name}}
+                            <h3 style="display: inline">{{student.user.first_name}} {{student.user.last_name}}
                             <a href = "/homework/teacher/student/view/{{ student.id }}" title = "View" class = "btn btn-primary">👁</a></h3>
                           </div>
                         </div>
@@ -65,9 +65,18 @@
         {% else %}
             var textbox = document.getElementById("submission-pend");
         {% endif %}
-        var text = (textbox.value).split(" ");
         var count = document.getElementById("wordCount");
-        count.innerHTML = text.length;
+        if (textbox.value === ""){
+            count.innerHTML = 0;
+        }
+        else {
+            var text = (textbox.value).split(" ");
+            if (text[text.length - 1] === "") {
+                count.innerHTML = text.length - 1;
+            } else {
+                count.innerHTML = text.length;
+            }
+        }
     }
 
     update();

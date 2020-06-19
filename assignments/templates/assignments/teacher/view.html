@@ -9,7 +9,7 @@
           <div class="col-lg-12">
             <div class="banner_text"><br><br><br><br><br>
                 <center><h1 style="display: inline">{{assignment.name}}</h1><br><br>
-                <h3 style="color: #ffffff">({{ assignment.user.first_name }})</h3>
+                <h3 style="color: #ffffff">({{ assignment.user.first_name }} {{ assignment.user.last_name }})</h3>
                 <h3 style="color: white">Due: {{ assignment.due_date }}</h3>
                 <p style = 'color: white;'>{{ assignment.description }}</p><br><br><br>
 
@@ -40,9 +40,19 @@
         {% else %}
             var textbox = document.getElementById("submission-pend");
         {% endif %}
-        var text = (textbox.value).split(" ");
         var count = document.getElementById("wordCount");
-        count.innerHTML = text.length;
+        if (textbox.value === ""){
+            count.innerHTML = 0;
+        }
+        else {
+            var text = (textbox.value).split(" ");
+            if (text[text.length - 1] === ""){
+                count.innerHTML = text.length - 1;
+            }
+            else{
+                count.innerHTML = text.length;
+            }
+        }
     }
 
     update();

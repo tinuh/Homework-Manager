@@ -4,13 +4,13 @@
     <script>
         let students = []
         {% for student in students %}
-            students.push("{{ student.first_name }}")
+            students.push("{{ student.first_name }} {{ student.last_name }}")
         {% endfor %}
 
         function random() {
             if (students.length === 0){
                 {% for student in students %}
-                    students.push("{{ student.first_name }}")
+                    students.push("{{ student.first_name }} {{ student.last_name }}")
                 {% endfor %}
             }
 
@@ -53,7 +53,7 @@
                     <h3 style = 'color: white;'><a class = "class-code" onclick = "showCode();">(Class Code: {{class.code}})</a> <a class = "edit-title" href = "/class/edit/{{ class.id }}">✎</a></h3>
                 <p style = 'color: white;'>{{ class.description }}</p><br><br><br>
                 {% if studentsA > 1%}
-                <h1><img class = "random-button" onclick="random();" src = "/static/images/wheel.png" style = "height: 55px;"> Students <span class="badge badge-secondary">{{studentsA}}</span></h1></center>
+                <h1><img title = "Pick a Random Student" class = "random-button" onclick="random();" src = "/static/images/wheel.png" style = "height: 55px;"> Students <span class="badge badge-secondary">{{studentsA}}</span></h1></center>
                 {% else %}
                 <h1>Students <span class="badge badge-secondary">{{studentsA}}</span></h1></center>
                 {% endif %}
@@ -61,7 +61,7 @@
                 {% for student in students %}
                 <div class="card class-card">
                   <div class="card-body">
-                      <h3 style="display: inline"><a>{{student.first_name}}</a>&nbsp;
+                      <h3 style="display: inline"><a>{{student.first_name}} {{student.last_name}}</a>&nbsp;
                     <a href = "/class/remove/student/{{class.id}}/{{student.id}}" title = "Delete" onclick=" return window.confirm('Are you sure you want to remove {{student.first_name}}');" class = "btn btn-danger">✗</a></h3>
                   </div>
                 </div>
